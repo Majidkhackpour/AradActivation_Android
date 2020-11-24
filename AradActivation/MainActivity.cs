@@ -1,13 +1,22 @@
-﻿using Android.App;
+﻿using System;
+using System.Collections.Generic;
+using Android.App;
+using Android.Content;
+using Android.Content.Res;
 using Android.Graphics;
 using Android.OS;
 using Android.Support.V7.App;
 using Android.Runtime;
+using Android.Support.V4.Widget;
+using Android.Views;
 using Android.Widget;
+using Refractored.Controls;
+using Services;
+using TMS.Class;
 
 namespace AradActivation
 {
-    [Activity(Label = "AradActivation", Theme = "@style/Theme.AppCompat.Light.NoActionBar", MainLauncher = true)]
+    [Activity(Label = "AradActivation", Theme = "@style/MyTheme", MainLauncher = true)]
     public class MainActivity : AppCompatActivity
     {
         private TextView lblCustomers;
@@ -15,6 +24,11 @@ namespace AradActivation
         private TextView lblOrders;
         private TextView lblReception;
         private TextView lblPardakht;
+        private Android.Support.V7.Widget.Toolbar myToolbar;
+        private ManageDrawer manager;
+        private DrawerLayout myDrawer;
+        private ListView myListView;
+        private List<string> _list;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -26,11 +40,80 @@ namespace AradActivation
             lblReception = FindViewById<TextView>(Resource.Id.lblReception);
             lblPardakht = FindViewById<TextView>(Resource.Id.lblPardakht);
             lblPardakht.Click += LblPardakht_Click;
+            myToolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.myToolbar);
+            SetSupportActionBar(myToolbar);
+            myListView = FindViewById<ListView>(Resource.Id.MyListView);
+
+
+
+            _list = new List<string>();
+            _list.Add($"کاربر جاری: Admin");
+            _list.Add($"ساعت ورود: {DateTime.Now.ToShortTimeString()}");
+            _list.Add($"{Calendar.GetFullCalendar()}");
+            _list.Add($"نسخه: 1.0.0.1");
+            myListView.Adapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleListItem1, _list);
+
+
+            myDrawer = FindViewById<DrawerLayout>(Resource.Id.myDrawer);
+            myListView.Tag = 0;
+            manager = new ManageDrawer(this, myDrawer, Resource.String.OpenDrawer, Resource.String.CloseDrawer);
+            myDrawer.SetDrawerListener(manager);
+            SupportActionBar.SetHomeButtonEnabled(true);
+            SupportActionBar.SetDisplayHomeAsUpEnabled(true);
+            SupportActionBar.SetDisplayShowTitleEnabled(true);
+            manager.SyncState();
+            if (savedInstanceState != null)
+            {
+                SupportActionBar.SetTitle(savedInstanceState.GetString("DrawerState") == "Opened"
+                    ? Resource.String.OpenDrawer
+                    : Resource.String.CloseDrawer);
+            }
+            else SupportActionBar.SetTitle(Resource.String.CloseDrawer);
+
+
+            lblCustomers.Click += LblCustomers_Click;
+
+        }
+
+        private void LblCustomers_Click(object sender, EventArgs e)
+        {
+            var intent = new Intent(this, (typeof(ShowCustomerActivity)));
+            StartActivity(intent);
         }
 
         private void LblPardakht_Click(object sender, System.EventArgs e)
         {
             Toast.MakeText(this, "پرداخت", ToastLength.Short).Show();
+        }
+
+        public override bool OnOptionsItemSelected(IMenuItem item)
+        {
+            switch (item.ItemId)
+            {
+                case Android.Resource.Id.Home:
+                    myDrawer.CloseDrawer(myListView);
+                    manager.OnOptionsItemSelected(item);
+                    break;
+            }
+            return base.OnOptionsItemSelected(item);
+        }
+
+        protected override void OnSaveInstanceState(Bundle outState)
+        {
+            outState.PutString("DrawerState", myDrawer.IsDrawerOpen((int)GravityFlags.Left) ? "Opened" : "Closed");
+            base.OnSaveInstanceState(outState);
+        }
+
+        protected override void OnPostCreate(Bundle savedInstanceState)
+        {
+            manager.SyncState();
+            base.OnPostCreate(savedInstanceState);
+        }
+
+        public override void OnConfigurationChanged(Configuration newConfig)
+        {
+            manager.OnConfigurationChanged(newConfig);
+            base.OnConfigurationChanged(newConfig);
         }
 
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)

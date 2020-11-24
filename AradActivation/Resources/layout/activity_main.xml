@@ -1,13 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:minWidth="25px"
-    android:minHeight="25px">
-    <LinearLayout
+    android:minHeight="25px"
+    android:background="#dcdcdc">
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/myToolbar"
+        android:minHeight="?android:attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Dark"/>
+    <android.support.v4.widget.DrawerLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/myDrawer">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+          <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="150dp"
         android:layout_marginTop="80dp">
@@ -179,7 +196,8 @@
                     android:layout_alignParentRight="true"
                     app:civ_border_width="3dp"
                     android:layout_alignParentTop="true"
-                    app:civ_border_color="#3498db"/>
+                    app:civ_border_color="#3498db"
+                    android:layout_gravity="center_horizontal"/>
             </LinearLayout>
             <LinearLayout
                 android:orientation="vertical"
@@ -197,4 +215,16 @@
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
-</RelativeLayout>
+        </RelativeLayout>
+
+      <ListView
+        android:id="@+id/MyListView"
+        android:layout_height="match_parent"
+        android:layout_width="240dp"
+        android:choiceMode="singleChoice"
+        android:divider="#818181"
+        android:dividerHeight="1dp"
+        android:background="#e5ffff"
+        android:layout_gravity="start" />
+    </android.support.v4.widget.DrawerLayout>
+</LinearLayout>
