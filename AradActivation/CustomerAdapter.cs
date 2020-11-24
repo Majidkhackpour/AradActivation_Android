@@ -35,7 +35,7 @@ namespace AradActivation
 
             return view;
         }
-        public override int Count => _list.Count;
+        public override int Count => _list?.Count ?? 0;
         public override CustomerBussines this[int position] => _list[position];
     }
 }

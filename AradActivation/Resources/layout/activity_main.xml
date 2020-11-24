@@ -32,7 +32,8 @@
             android:orientation="vertical"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="3">
+            android:layout_weight="3"
+            android:id="@+id/orderLayout">
             <LinearLayout
                 android:orientation="vertical"
                 android:minWidth="25px"
@@ -68,7 +69,8 @@
             android:orientation="vertical"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="3">
+            android:layout_weight="3"
+            android:id="@+id/productLayout">
             <LinearLayout
                 android:orientation="vertical"
                 android:minWidth="25px"
@@ -104,7 +106,8 @@
             android:orientation="vertical"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="3">
+            android:layout_weight="3"
+            android:id="@+id/cusLayout">
             <LinearLayout
                 android:orientation="vertical"
                 android:minWidth="25px"
@@ -145,7 +148,8 @@
             android:orientation="vertical"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="5">
+            android:layout_weight="5"
+            android:id="@+id/pardakhtLayout">
             <LinearLayout
                 android:orientation="vertical"
                 android:minWidth="25px"
@@ -181,7 +185,8 @@
             android:orientation="vertical"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="5">
+            android:layout_weight="5"
+            android:id="@+id/daryaftLayout">
             <LinearLayout
                 android:orientation="vertical"
                 android:minWidth="25px"
