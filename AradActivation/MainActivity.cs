@@ -60,7 +60,6 @@ namespace AradActivation
 
             HandleEvents();
         }
-
         private void SetFonts()
         {
             var font = Typeface.CreateFromAsset(Assets, "B Yekan.TTF");
@@ -87,8 +86,7 @@ namespace AradActivation
         }
         private void CusLayout_Click(object sender, EventArgs e)
         {
-            var intent = new Intent(this, (typeof(ShowCustomerActivity)));
-            StartActivity(intent);
+            StartActivity(typeof(ShowCustomerActivity));
         }
         public override bool OnOptionsItemSelected(IMenuItem item)
         {

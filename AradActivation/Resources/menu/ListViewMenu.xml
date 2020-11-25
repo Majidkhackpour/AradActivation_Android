@@ -1,0 +1,6 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+  	<item android:id="@+id/actionNew"
+		android:icon="@drawable/add"
+    	android:title="افزودن مشتری جدید"
+    	android:showAsAction="ifRoom" />
+</menu>
