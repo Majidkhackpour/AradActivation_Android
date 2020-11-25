@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
+﻿using System.Linq;
 using Android.App;
 using Android.OS;
 using Android.Widget;
@@ -19,7 +18,8 @@ namespace AradActivation
             lstCustomers = FindViewById<ListView>(Resource.Id.CustomerListView);
 
             var list = CustomerBussines.GetAll();
-            lstCustomers.Adapter = new CustomerAdapter(this, list);
+            lstCustomers.Adapter = new CustomerAdapter(this, list.OrderBy(q => q.Name).ToList());
         }
+
     }
 }

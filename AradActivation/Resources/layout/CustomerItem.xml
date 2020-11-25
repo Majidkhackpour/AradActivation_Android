@@ -57,7 +57,7 @@
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/textView1"
+                    android:id="@+id/cmpText"
                     android:gravity="right"
                     android:layout_margin="2dp" />
             </LinearLayout>
@@ -99,7 +99,7 @@
               android:textAppearance="?android:attr/textAppearanceMedium"
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
-              android:id="@+id/textView1"
+              android:id="@+id/serText"
               android:gravity="right"
               android:layout_margin="2dp" />
           </LinearLayout>
@@ -141,7 +141,7 @@
               android:textAppearance="?android:attr/textAppearanceMedium"
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
-              android:id="@+id/textView1"
+              android:id="@+id/hardText"
               android:gravity="right"
               android:layout_margin="2dp" />
           </LinearLayout>
@@ -183,7 +183,7 @@
               android:textAppearance="?android:attr/textAppearanceMedium"
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
-              android:id="@+id/textView1"
+              android:id="@+id/tell1Text"
               android:gravity="right"
               android:layout_margin="2dp" />
           </LinearLayout>
@@ -220,14 +220,14 @@
             android:layout_height="match_parent"
             android:layout_weight="3"
             android:id="@+id/linearLayout4" >
-            <TextView
-              android:text="شماره تماس:"
-              android:textAppearance="?android:attr/textAppearanceMedium"
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              android:id="@+id/textView1"
-              android:gravity="right"
-              android:layout_margin="2dp" />
+                <TextView
+                    android:text="شماره تماس:"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/tell2Text"
+                    android:gravity="right"
+                    android:layout_margin="2dp" />
           </LinearLayout>
         </LinearLayout>
        

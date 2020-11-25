@@ -1,10 +1,9 @@
 ﻿using System.Collections.Generic;
 using Android.App;
+using Android.Graphics;
 using Android.Views;
 using Android.Widget;
 using DepartmentDal.Classes;
-using Java.Lang;
-using Services;
 
 namespace AradActivation
 {
@@ -33,9 +32,31 @@ namespace AradActivation
             view.FindViewById<TextView>(Resource.Id.lblTell1).Text = cust?.Tell1;
             view.FindViewById<TextView>(Resource.Id.lblTell2).Text = cust?.Tell2;
 
+            SetFonts(view);
+
             return view;
         }
         public override int Count => _list?.Count ?? 0;
         public override CustomerBussines this[int position] => _list[position];
+        private void SetFonts(View view)
+        {
+            var fontYekan = Typeface.CreateFromAsset(_context.Assets, "B Yekan.TTF");
+            var fontTitr = Typeface.CreateFromAsset(_context.Assets, "B TITR BOLD.TTF");
+
+            view.FindViewById<TextView>(Resource.Id.lblCustName).Typeface = fontTitr;
+            view.FindViewById<TextView>(Resource.Id.lblCompanyName).Typeface = fontYekan;
+            view.FindViewById<TextView>(Resource.Id.lblSerial).Typeface = fontYekan;
+            view.FindViewById<TextView>(Resource.Id.lblFanni).Typeface = fontYekan;
+            view.FindViewById<TextView>(Resource.Id.lblTell1).Typeface = fontYekan;
+            view.FindViewById<TextView>(Resource.Id.lblTell2).Typeface = fontYekan;
+
+
+
+            view.FindViewById<TextView>(Resource.Id.cmpText).Typeface = fontYekan;
+            view.FindViewById<TextView>(Resource.Id.serText).Typeface = fontYekan;
+            view.FindViewById<TextView>(Resource.Id.hardText).Typeface = fontYekan;
+            view.FindViewById<TextView>(Resource.Id.tell1Text).Typeface = fontYekan;
+            view.FindViewById<TextView>(Resource.Id.tell2Text).Typeface = fontYekan;
+        }
     }
 }
