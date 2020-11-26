@@ -31,6 +31,7 @@ namespace AradActivation
             view.FindViewById<TextView>(Resource.Id.lblFanni).Text = cust?.HardSerial;
             view.FindViewById<TextView>(Resource.Id.lblTell1).Text = cust?.Tell1;
             view.FindViewById<TextView>(Resource.Id.lblTell2).Text = cust?.Tell2;
+            view.FindViewById<TextView>(Resource.Id.lblAddress).Text = cust?.Address;
 
             SetFonts(view);
 
@@ -49,6 +50,7 @@ namespace AradActivation
             view.FindViewById<TextView>(Resource.Id.lblFanni).Typeface = fontYekan;
             view.FindViewById<TextView>(Resource.Id.lblTell1).Typeface = fontYekan;
             view.FindViewById<TextView>(Resource.Id.lblTell2).Typeface = fontYekan;
+            view.FindViewById<TextView>(Resource.Id.lblAddress).Typeface = fontYekan;
 
 
 
@@ -57,6 +59,7 @@ namespace AradActivation
             view.FindViewById<TextView>(Resource.Id.hardText).Typeface = fontYekan;
             view.FindViewById<TextView>(Resource.Id.tell1Text).Typeface = fontYekan;
             view.FindViewById<TextView>(Resource.Id.tell2Text).Typeface = fontYekan;
+            view.FindViewById<TextView>(Resource.Id.AddressText).Typeface = fontYekan;
         }
     }
 }

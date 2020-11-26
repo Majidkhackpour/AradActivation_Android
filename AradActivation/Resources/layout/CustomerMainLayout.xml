@@ -17,78 +17,78 @@
         android:minHeight="25px"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/scrollView1" >
+        android:id="@+id/scrollView1">
         <LinearLayout
             android:orientation="vertical"
             android:minWidth="25px"
             android:minHeight="25px"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/linearLayout1" >
-          <EditText
-            android:inputType="textPersonName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/txtName"
-            android:layout_margin="5dp"
-            android:hint="نام و نام خانوادگی"
-            android:gravity="right"/>
-          <EditText
-        android:inputType="textPersonName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/txtCompany"
-        android:layout_margin="5dp"
-        android:hint="عنوان مجموعه"
-        android:gravity="right"/>
-    <EditText
-        android:inputType="number"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/txtNatCode"
-        android:layout_margin="5dp"
-        android:gravity="right"
-        android:hint="کد ملی"/>
-    <EditText
-        android:inputType="number"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/txtZipCode"
-        android:layout_margin="5dp"
-        android:gravity="right"
-        android:hint="کد پستی"/>
-    <EditText
-        android:inputType="number"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/txtTell1"
-        android:layout_margin="5dp"
-        android:gravity="right"
-        android:hint="تلفن 1"/>
-    <EditText
-        android:inputType="number"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/txtTell2"
-        android:layout_margin="5dp"
-        android:gravity="right"
-        android:hint="تلفن 2"/>
-    <EditText
-        android:inputType="textEmailAddress"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/txtEmail"
-        android:layout_margin="5dp"
-        android:gravity="right"
-        android:hint="پست الکترونیک"/>
-    <EditText
-        android:inputType="textMultiLine"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/txtAddress"
-        android:layout_margin="5dp"
-        android:gravity="right"
-        android:hint="آدرس"/>
+            android:id="@+id/linearLayout1">
+            <EditText
+                android:inputType="textPersonName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtName"
+                android:layout_margin="5dp"
+                android:hint="نام و نام خانوادگی"
+                android:gravity="right"/>
+            <EditText
+                android:inputType="textPersonName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtCompany"
+                android:layout_margin="5dp"
+                android:hint="عنوان مجموعه"
+                android:gravity="right"/>
+            <EditText
+                android:inputType="number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtNatCode"
+                android:layout_margin="5dp"
+                android:gravity="right"
+                android:hint="کد ملی"/>
+            <EditText
+                android:inputType="number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtZipCode"
+                android:layout_margin="5dp"
+                android:gravity="right"
+                android:hint="کد پستی"/>
+            <EditText
+                android:inputType="number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtTell1"
+                android:layout_margin="5dp"
+                android:gravity="right"
+                android:hint="تلفن 1"/>
+            <EditText
+                android:inputType="number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtTell2"
+                android:layout_margin="5dp"
+                android:gravity="right"
+                android:hint="تلفن 2"/>
+            <EditText
+                android:inputType="textEmailAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtEmail"
+                android:layout_margin="5dp"
+                android:gravity="right"
+                android:hint="پست الکترونیک"/>
+            <EditText
+                android:inputType="textMultiLine"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtAddress"
+                android:layout_margin="5dp"
+                android:gravity="right"
+                android:hint="آدرس"/>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
