@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using Android.App;
-using Android.Content;
 using Android.Content.Res;
 using Android.Graphics;
 using Android.OS;
@@ -74,7 +73,14 @@ namespace AradActivation
         private void HandleEvents()
         {
             cusLayout.Click += CusLayout_Click;
+            prdLayout.Click += PrdLayout_Click;
         }
+
+        private void PrdLayout_Click(object sender, EventArgs e)
+        {
+            StartActivity(typeof(ShowProductActivity));
+        }
+
         private void SetDrawer()
         {
             _list = new List<string>();
