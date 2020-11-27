@@ -87,7 +87,7 @@ namespace AradActivation
                     Status = true,
                     Tell3 = "",
                     Tell4 = "",
-                    UserGuid = Guid.Empty,
+                    UserGuid = CurrentUser.User.Guid,
                     CreateDate = DateTime.Now,
                     UserName = ""
                 };

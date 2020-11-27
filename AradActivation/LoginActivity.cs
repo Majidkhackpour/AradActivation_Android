@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using Android.App;
@@ -11,12 +12,12 @@ using Services;
 
 namespace AradActivation
 {
-    [Activity(Label = "", Theme = "@style/MyTheme", MainLauncher = true)]
+    [Activity(Label = "Arad", Theme = "@style/MyTheme", MainLauncher = true, Icon = "@drawable/Arad_Icon")]
     public class LoginActivity : AppCompatActivity
     {
         private TextView lblLoginArad;
         private TextView lblLogin;
-        private EditText txtUserName;
+        private AutoCompleteTextView txtUserName;
         private EditText txtPassword;
         private Button btnLogin;
         protected override void OnCreate(Bundle savedInstanceState)
@@ -26,6 +27,9 @@ namespace AradActivation
             SetContentView(Resource.Layout.LoginLayout);
             FindElements();
             SetFonts();
+            var names = UserBussines.GetAll().Select(q => q.UserName).ToList();
+            ArrayAdapter adapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleSpinnerItem, names);
+            txtUserName.Adapter = adapter;
             btnLogin.Click += BtnLogin_Click;
         }
 
@@ -101,7 +105,7 @@ namespace AradActivation
         {
             lblLoginArad = FindViewById<TextView>(Resource.Id.lblLoginArad);
             lblLogin = FindViewById<TextView>(Resource.Id.lblLogin);
-            txtUserName = FindViewById<EditText>(Resource.Id.txtUserName);
+            txtUserName = FindViewById<AutoCompleteTextView>(Resource.Id.txtUserName);
             txtPassword = FindViewById<EditText>(Resource.Id.txtPassword);
             btnLogin = FindViewById<Button>(Resource.Id.btnLogin);
         }

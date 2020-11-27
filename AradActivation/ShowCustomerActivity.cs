@@ -47,6 +47,8 @@ namespace AradActivation
             try
             {
                 list = CustomerBussines.GetAll();
+                if (CurrentUser.User.Type != EnUserType.Manager)
+                    list = list.Where(q => q.UserGuid == CurrentUser.User.Guid).ToList();
                 lstCustomers.Adapter = new CustomerAdapter(this, list.OrderBy(q => q.Name).ToList());
             }
             catch (Exception ex)

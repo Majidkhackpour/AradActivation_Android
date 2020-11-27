@@ -41,7 +41,7 @@ namespace AradActivation
             SetFonts();
             SetSupportActionBar(myToolbar);
             SetDrawer();
-            
+
             myListView.Tag = 0;
             manager = new ManageDrawer(this, myDrawer, Resource.String.OpenDrawer, Resource.String.CloseDrawer);
             myDrawer.SetDrawerListener(manager);
@@ -78,16 +78,25 @@ namespace AradActivation
 
         private void PrdLayout_Click(object sender, EventArgs e)
         {
+            if (CurrentUser.User.Type != EnUserType.Manager)
+            {
+                Toast.MakeText(this, "شما مجوز دسترسی به این بخش را ندارید", ToastLength.Short).Show();
+                return;
+            }
             StartActivity(typeof(ShowProductActivity));
         }
 
         private void SetDrawer()
         {
-            _list = new List<string>();
-            _list.Add($"کاربر جاری: Admin");
-            _list.Add($"ساعت ورود: {DateTime.Now.ToShortTimeString()}");
-            _list.Add($"{Calendar.GetFullCalendar()}");
-            _list.Add($"نسخه: 1.0.0.1");
+            var font = Typeface.CreateFromAsset(Assets, "B Yekan.TTF");
+            _list = new List<string>
+            {
+                $"کاربر جاری: {CurrentUser.User.Name}",
+                $"سطح دسترسی: {CurrentUser.User.TypeName}",
+                $"ساعت ورود: {DateTime.Now.ToShortTimeString()}",
+                $"{Calendar.GetFullCalendar()}",
+                $"نسخه: 1.0.0.1"
+            };
             myListView.Adapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleListItem1, _list);
         }
         private void CusLayout_Click(object sender, EventArgs e)
