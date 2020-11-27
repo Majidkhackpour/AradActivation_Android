@@ -13,7 +13,7 @@ using Services;
 
 namespace AradActivation
 {
-    [Activity(Label = "AradActivation", Theme = "@style/MyTheme", MainLauncher = true)]
+    [Activity(Label = "AradActivation", Theme = "@style/MyTheme")]
     public class MainActivity : AppCompatActivity
     {
         private TextView lblCustomers;
