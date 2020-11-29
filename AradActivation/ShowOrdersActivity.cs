@@ -68,7 +68,7 @@ namespace AradActivation
 
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
-            //StartActivity(typeof(CustomerMainActivity));
+            StartActivity(typeof(OrderMainActivity));
             return base.OnOptionsItemSelected(item);
         }
     }
