@@ -74,6 +74,12 @@ namespace AradActivation
         {
             cusLayout.Click += CusLayout_Click;
             prdLayout.Click += PrdLayout_Click;
+            orderLayout.Click += OrderLayout_Click;
+        }
+
+        private void OrderLayout_Click(object sender, EventArgs e)
+        {
+            StartActivity(typeof(ShowOrdersActivity));
         }
 
         private void PrdLayout_Click(object sender, EventArgs e)
