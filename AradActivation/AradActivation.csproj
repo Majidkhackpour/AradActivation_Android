@@ -71,6 +71,7 @@
     <Compile Include="MainActivity.cs" />
     <Compile Include="ManageDrawer.cs" />
     <Compile Include="OrderAdapter.cs" />
+    <Compile Include="OrderDetAdapter.cs" />
     <Compile Include="OrderMainActivity.cs" />
     <Compile Include="ProductAdapter.cs" />
     <Compile Include="ProductMainActivity.cs" />
@@ -216,6 +217,11 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\OrderMainLayout.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\OrderDetsItem.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

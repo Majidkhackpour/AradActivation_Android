@@ -31,8 +31,7 @@ namespace AradActivation
             view.FindViewById<TextView>(Resource.Id.lblOrderDiscount).Text = cust?.Discount.ToString("N0") + " ریال";
             view.FindViewById<TextView>(Resource.Id.lblOrderSum).Text = cust?.Sum.ToString("N0") + " ریال";
             view.FindViewById<TextView>(Resource.Id.lblOrderTotal).Text = cust?.Total.ToString("N0") + " ریال";
-            view.FindViewById<TextView>(Resource.Id.lblOrderDets).Text =
-                string.Join(" , ", cust?.DetList.Select(q => q.ProductName).ToList());
+            
 
             SetFonts(view);
 
@@ -47,7 +46,6 @@ namespace AradActivation
 
             view.FindViewById<TextView>(Resource.Id.lblOrderCustName).Typeface = fontTitr;
             view.FindViewById<TextView>(Resource.Id.lblOrderDateSh).Typeface = fontYekan;
-            view.FindViewById<TextView>(Resource.Id.lblOrderDets).Typeface = fontYekan;
             view.FindViewById<TextView>(Resource.Id.lblOrderDiscount).Typeface = fontYekan;
             view.FindViewById<TextView>(Resource.Id.lblOrderTotal).Typeface = fontYekan;
             view.FindViewById<TextView>(Resource.Id.lblOrderSum).Typeface = fontYekan;
@@ -58,7 +56,6 @@ namespace AradActivation
             view.FindViewById<TextView>(Resource.Id.sumText).Typeface = fontYekan;
             view.FindViewById<TextView>(Resource.Id.discountText).Typeface = fontYekan;
             view.FindViewById<TextView>(Resource.Id.totalText).Typeface = fontYekan;
-            view.FindViewById<TextView>(Resource.Id.orderDetsText).Typeface = fontYekan;
         }
     }
 }
