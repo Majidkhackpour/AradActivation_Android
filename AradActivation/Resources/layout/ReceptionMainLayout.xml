@@ -199,6 +199,67 @@
                 android:hint="بانک صادرکننده چک"
                 android:gravity="right"
                 android:textAlignment="center"/>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:minWidth="25px"
+                    android:minHeight="25px"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="6">
+                    <EditText
+                        android:inputType="number"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:id="@+id/txtReceptionMainYear"
+                        android:layout_margin="5dp"
+                        android:gravity="right"
+                        android:textAlignment="center"
+                        android:hint="سال "/>
+                    <EditText
+                        android:inputType="number"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:id="@+id/txtReceptionMainMounth"
+                        android:layout_margin="5dp"
+                        android:gravity="right"
+                        android:textAlignment="center"
+                        android:hint="ماه "/>
+                    <EditText
+                        android:inputType="number"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:id="@+id/txtReceptionMainDay"
+                        android:layout_margin="5dp"
+                        android:gravity="right"
+                        android:textAlignment="center"
+                        android:hint="روز "/>
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:minWidth="25px"
+                    android:minHeight="25px"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3">
+                    <TextView
+                        android:text="تاریخ سررسید:"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/ReceptionMainDateShText"
+                        android:gravity="right"
+                        android:layout_marginTop="20dp"/>
+                </LinearLayout>
+            </LinearLayout>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
