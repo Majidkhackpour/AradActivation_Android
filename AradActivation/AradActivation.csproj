@@ -73,13 +73,17 @@
     <Compile Include="OrderAdapter.cs" />
     <Compile Include="OrderDetAdapter.cs" />
     <Compile Include="OrderMainActivity.cs" />
+    <Compile Include="PardakhtAdapter.cs" />
     <Compile Include="ProductAdapter.cs" />
     <Compile Include="ProductMainActivity.cs" />
+    <Compile Include="ReceptionAdapter.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ShowCustomerActivity.cs" />
     <Compile Include="ShowOrdersActivity.cs" />
+    <Compile Include="ShowPardakhtActivity.cs" />
     <Compile Include="ShowProductActivity.cs" />
+    <Compile Include="ShowReceptionActivity.cs" />
     <Compile Include="Utilities\ObjectTypeHelper.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -222,6 +226,26 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\OrderDetsItem.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\ShowPardakht.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\ShowReception.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\ReceptionItem.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\PardakhtItem.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

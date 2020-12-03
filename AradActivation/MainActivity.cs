@@ -75,6 +75,18 @@ namespace AradActivation
             cusLayout.Click += CusLayout_Click;
             prdLayout.Click += PrdLayout_Click;
             orderLayout.Click += OrderLayout_Click;
+            receptionLayout.Click += ReceptionLayout_Click;
+            pardakhtLayout.Click += PardakhtLayout_Click;
+        }
+
+        private void PardakhtLayout_Click(object sender, EventArgs e)
+        {
+            StartActivity(typeof(ShowPardakhtActivity));
+        }
+
+        private void ReceptionLayout_Click(object sender, EventArgs e)
+        {
+            StartActivity(typeof(ShowReceptionActivity));
         }
 
         private void OrderLayout_Click(object sender, EventArgs e)
@@ -101,7 +113,13 @@ namespace AradActivation
                 $"سطح دسترسی: {CurrentUser.User.TypeName}",
                 $"ساعت ورود: {DateTime.Now.ToShortTimeString()}",
                 $"{Calendar.GetFullCalendar()}",
-                $"نسخه: 1.0.0.1"
+                $"نسخه: 1.0.0.1",
+                "",
+                "کد فعالسازی",
+                "وضعیت مانده حساب مشتریان",
+                "وضعیت چک های دریافتی",
+                "مسدودسازی کاربر",
+                "مسدودسازی مشتری"
             };
             myListView.Adapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleListItem1, _list);
         }
