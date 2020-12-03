@@ -12,7 +12,7 @@ using Services;
 
 namespace AradActivation
 {
-    [Activity(Label = "Arad", Theme = "@style/MyTheme", MainLauncher = true, Icon = "@drawable/Arad_Icon")]
+    [Activity(Label = "Arad", Theme = "@style/MyTheme", MainLauncher = true, Icon = "@drawable/Arad_Icon", NoHistory = true)]
     public class LoginActivity : AppCompatActivity
     {
         private TextView lblLoginArad;

@@ -1,5 +1,6 @@
 ﻿using System;
 using Android.App;
+using Android.Graphics;
 using Android.OS;
 using Android.Support.V7.App;
 using Android.Views;
@@ -38,6 +39,7 @@ namespace AradActivation
             txtPrice = FindViewById<EditText>(Resource.Id.txtPrdPrice);
             txtBackUp = FindViewById<EditText>(Resource.Id.txtPrdBackUp);
 
+            SetFonts();
 
             txtName.Text = prd?.Name;
             txtCode.Text = prd?.Code;
@@ -45,6 +47,15 @@ namespace AradActivation
             txtBackUp.Text = prd?.BckUpPrice.ToString("N0");
 
             if (prd == null || prd.Guid == Guid.Empty) txtCode.Text = ProductBussines.NextCode();
+        }
+        private void SetFonts()
+        {
+            var fontYekan = Typeface.CreateFromAsset(Assets, "B Yekan.TTF");
+
+            txtName.Typeface = fontYekan;
+            txtCode.Typeface = fontYekan;
+            txtPrice.Typeface = fontYekan;
+            txtBackUp.Typeface = fontYekan;
         }
         public override bool OnCreateOptionsMenu(IMenu menu)
         {

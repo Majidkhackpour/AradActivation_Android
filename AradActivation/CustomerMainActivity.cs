@@ -1,5 +1,6 @@
 ﻿using System;
 using Android.App;
+using Android.Graphics;
 using Android.OS;
 using Android.Support.V7.App;
 using Android.Views;
@@ -45,6 +46,7 @@ namespace AradActivation
             txtEmail = FindViewById<EditText>(Resource.Id.txtEmail);
             txtAddress = FindViewById<EditText>(Resource.Id.txtAddress);
 
+            SetFonts();
 
             txtName.Text = cus?.Name;
             txtCompany.Text = cus?.CompanyName;
@@ -55,12 +57,24 @@ namespace AradActivation
             txtEmail.Text = cus?.Email;
             txtAddress.Text = cus?.Address;
         }
+        private void SetFonts()
+        {
+            var fontYekan = Typeface.CreateFromAsset(Assets, "B Yekan.TTF");
+
+            txtName.Typeface = fontYekan;
+            txtCompany.Typeface = fontYekan;
+            txtNatCode.Typeface = fontYekan;
+            txtZip.Typeface = fontYekan;
+            txtTell1.Typeface = fontYekan;
+            txtTell2.Typeface = fontYekan;
+            txtEmail.Typeface = fontYekan;
+            txtAddress.Typeface = fontYekan;
+        }
         public override bool OnCreateOptionsMenu(IMenu menu)
         {
             MenuInflater.Inflate(Resource.Menu.addMenu, menu);
             return base.OnCreateOptionsMenu(menu);
         }
-
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
             var res = new ReturnedSaveFuncInfo();
