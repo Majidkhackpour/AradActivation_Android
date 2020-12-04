@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using Android.App;
+using Android.Content;
 using Android.Content.Res;
 using Android.Graphics;
+using Android.Net;
 using Android.OS;
 using Android.Support.V7.App;
 using Android.Runtime;
@@ -31,6 +33,7 @@ namespace AradActivation
         private LinearLayout orderLayout;
         private LinearLayout receptionLayout;
         private LinearLayout pardakhtLayout;
+        private bool doubleBackToExitPressedOnce = false;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -69,7 +72,24 @@ namespace AradActivation
             lblReception.Typeface = font;
             lblPardakht.Typeface = font;
         }
+        public override void OnBackPressed()
+        {
+            if (doubleBackToExitPressedOnce)
+            {
+                base.OnBackPressed();
+                Java.Lang.JavaSystem.Exit(0);
+                return;
+            }
 
+
+            doubleBackToExitPressedOnce = true;
+            Toast.MakeText(this, "برای خروج، مجددا کلید بازگشت را بفشارید", ToastLength.Short).Show();
+
+            new Handler().PostDelayed(() =>
+            {
+                doubleBackToExitPressedOnce = false;
+            }, 2000);
+        }
         private void HandleEvents()
         {
             cusLayout.Click += CusLayout_Click;
@@ -77,6 +97,23 @@ namespace AradActivation
             orderLayout.Click += OrderLayout_Click;
             receptionLayout.Click += ReceptionLayout_Click;
             pardakhtLayout.Click += PardakhtLayout_Click;
+            myListView.ItemClick += MyListView_ItemClick;
+        }
+
+        private void MyListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
+        {
+            if (CurrentUser.User.Type != EnUserType.Manager)
+            {
+                Toast.MakeText(this, "شما مجوز دسترسی به این بخش را ندارید", ToastLength.Short).Show();
+                return;
+            }
+            var name = _list[e.Position];
+            switch (name)
+            {
+                case "ضعیت مانده حساب مشتریان": break;
+                case "وضعیت چک های دریافتی": break;
+                case "مسدودسازی کاربر":StartActivity(typeof(UserBlockActivity)); break;
+            }
         }
 
         private void PardakhtLayout_Click(object sender, EventArgs e)
@@ -115,11 +152,9 @@ namespace AradActivation
                 $"{Calendar.GetFullCalendar()}",
                 $"نسخه: 1.0.0.1",
                 "",
-                "کد فعالسازی",
                 "وضعیت مانده حساب مشتریان",
                 "وضعیت چک های دریافتی",
-                "مسدودسازی کاربر",
-                "مسدودسازی مشتری"
+                "مسدودسازی کاربر"
             };
             myListView.Adapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleListItem1, _list);
         }

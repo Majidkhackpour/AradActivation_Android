@@ -190,6 +190,15 @@
                 android:gravity="right"
                 android:textAlignment="center"
                 android:hint="مبلغ "/>
+            <EditText
+                android:inputType="number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtPardakhtMainChechNo"
+                android:layout_margin="5dp"
+                android:gravity="right"
+                android:textAlignment="center"
+                android:hint="شماره چک "/>
             <AutoCompleteTextView
                 android:inputType="textPersonName"
                 android:layout_width="match_parent"

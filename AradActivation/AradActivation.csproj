@@ -51,6 +51,7 @@
     <AndroidUseSharedRuntime>False</AndroidUseSharedRuntime>
     <AndroidLinkMode>SdkOnly</AndroidLinkMode>
     <EmbedAssembliesIntoApk>True</EmbedAssembliesIntoApk>
+    <AndroidPackageFormat>apk</AndroidPackageFormat>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="persianCalender">
@@ -86,6 +87,9 @@
     <Compile Include="ShowPardakhtActivity.cs" />
     <Compile Include="ShowProductActivity.cs" />
     <Compile Include="ShowReceptionActivity.cs" />
+    <Compile Include="UserAdapter.cs" />
+    <Compile Include="UserBlockActivity.cs" />
+    <Compile Include="Utilities\InternetAccess.cs" />
     <Compile Include="Utilities\ObjectTypeHelper.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -258,6 +262,16 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\PardakhtMainLayout.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\ShowUsers.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\UserItemLayout.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

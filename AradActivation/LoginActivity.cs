@@ -7,6 +7,7 @@ using Android.Graphics;
 using Android.OS;
 using Android.Support.V7.App;
 using Android.Widget;
+using AradActivation.Utilities;
 using DepartmentDal.Classes;
 using Services;
 
@@ -25,11 +26,16 @@ namespace AradActivation
             base.OnCreate(savedInstanceState);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             SetContentView(Resource.Layout.LoginLayout);
+            
             FindElements();
             SetFonts();
-            var names = UserBussines.GetAll().Select(q => q.UserName).ToList();
-            ArrayAdapter adapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleSpinnerItem, names);
-            txtUserName.Adapter = adapter;
+            if (InternetAccess.CheckNetworkConnection())
+            {
+                var names = UserBussines.GetAll().Select(q => q.UserName).ToList();
+                ArrayAdapter adapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleSpinnerItem, names);
+                txtUserName.Adapter = adapter;
+            }
+
             btnLogin.Click += BtnLogin_Click;
         }
 
@@ -64,6 +70,13 @@ namespace AradActivation
                 return;
             }
 
+            if (user.IsBlock)
+            {
+                Toast.MakeText(this, "دسترسی شما به برنامه، از طریق پنل مدیریت محدود شده است", ToastLength.Long).Show();
+                txtPassword.SelectAll();
+                return;
+            }
+
             CurrentUser.User = user;
             CurrentUser.LastVorrod = DateTime.Now;
 
@@ -77,6 +90,12 @@ namespace AradActivation
             {
                 txtUserName.Error = null;
                 txtPassword.Error = null;
+                if (!InternetAccess.CheckNetworkConnection())
+                {
+                    res.AddReturnedValue(ReturnedState.Error,
+                        "لطفا دسترسی خود به اینترنت را بررسی کرده و مجددا تلاش نمایید");
+                    return res;
+                }
                 if (string.IsNullOrEmpty(txtUserName.Text))
                 {
                     var msg = "لطفا نام کاربری را وارد نمایید";
