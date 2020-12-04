@@ -90,7 +90,6 @@ namespace AradActivation
             Finish();
             return base.OnOptionsItemSelected(item);
         }
-
         private ReturnedSaveFuncInfo CheckValidation()
         {
             var res = new ReturnedSaveFuncInfo();
