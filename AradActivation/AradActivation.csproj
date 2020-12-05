@@ -66,6 +66,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CurrentUser.cs" />
+    <Compile Include="CustomerAccountActivity.cs" />
+    <Compile Include="CustomerAccountAdapter.cs" />
     <Compile Include="CustomerAdapter.cs" />
     <Compile Include="CustomerMainActivity.cs" />
     <Compile Include="LoginActivity.cs" />
@@ -272,6 +274,16 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\UserItemLayout.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\CustomerAccountALayout.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\CustomerAccountItem.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

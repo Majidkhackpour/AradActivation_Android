@@ -210,8 +210,8 @@ namespace AradActivation
 
                 customerGuid = cust.Guid;
 
-                if (txtReceptionMainNaqdPrice.Text.ParseToDecimal() <= 0 ||
-                    txtReceptionMainBankPrice.Text.ParseToDecimal() <= 0 ||
+                if (txtReceptionMainNaqdPrice.Text.ParseToDecimal() <= 0 &&
+                    txtReceptionMainBankPrice.Text.ParseToDecimal() <= 0 &&
                     txtReceptionMainCheckPrice.Text.ParseToDecimal() <= 0)
                 {
                     res.AddReturnedValue(ReturnedState.Error, "حتما باید یکی از قیلدهای مبلغ را وارد نمایید");

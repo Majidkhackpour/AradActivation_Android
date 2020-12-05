@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using Android.App;
-using Android.Content;
 using Android.Content.Res;
 using Android.Graphics;
-using Android.Net;
 using Android.OS;
 using Android.Support.V7.App;
 using Android.Runtime;
@@ -110,9 +108,13 @@ namespace AradActivation
             var name = _list[e.Position];
             switch (name)
             {
-                case "ضعیت مانده حساب مشتریان": break;
-                case "وضعیت چک های دریافتی": break;
-                case "مسدودسازی کاربر":StartActivity(typeof(UserBlockActivity)); break;
+                case "کد فعالسازی": break;
+                case "مدیریت کاربران": break;
+                case "وضعیت مانده حساب مشتریان": StartActivity(typeof(CustomerAccountActivity)); break;
+                case "مسدودسازی مشتری": break;
+                case "لاگ عملکرد مشتری": break;
+                case "لاگ عملکرد کاربر": break;
+                case "مسدودسازی کاربر": StartActivity(typeof(UserBlockActivity)); break;
             }
         }
 
@@ -150,11 +152,15 @@ namespace AradActivation
                 $"سطح دسترسی: {CurrentUser.User.TypeName}",
                 $"ساعت ورود: {DateTime.Now.ToShortTimeString()}",
                 $"{Calendar.GetFullCalendar()}",
-                $"نسخه: 1.0.0.1",
+                $"نسخه: {Application.Context.ApplicationContext.PackageManager.GetPackageInfo(Application.Context.ApplicationContext.PackageName, 0).VersionName}",
                 "",
+                "کد فعالسازی",
+                "مدیریت کاربران",
                 "وضعیت مانده حساب مشتریان",
-                "وضعیت چک های دریافتی",
-                "مسدودسازی کاربر"
+                "لاگ عملکرد مشتری",
+                "لاگ عملکرد کاربر",
+                "مسدودسازی کاربر",
+                "مسدودسازی مشتری"
             };
             myListView.Adapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleListItem1, _list);
         }
