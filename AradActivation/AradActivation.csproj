@@ -69,6 +69,10 @@
     <Compile Include="CustomerAccountActivity.cs" />
     <Compile Include="CustomerAccountAdapter.cs" />
     <Compile Include="CustomerAdapter.cs" />
+    <Compile Include="CustomerFilterActivity.cs" />
+    <Compile Include="CustomerFilterAdapter.cs" />
+    <Compile Include="CustomerLogActivity.cs" />
+    <Compile Include="CustomerLogAdapter.cs" />
     <Compile Include="CustomerMainActivity.cs" />
     <Compile Include="LoginActivity.cs" />
     <Compile Include="MainActivity.cs" />
@@ -284,6 +288,26 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\CustomerAccountItem.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\CustomerFilterLayout.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\CustomerFilterItem.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\CustomerLogLayout.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\CustomerLogItem.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
