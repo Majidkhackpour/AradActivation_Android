@@ -97,6 +97,10 @@
     <Compile Include="ShowUsersAdapter.cs" />
     <Compile Include="UserAdapter.cs" />
     <Compile Include="UserBlockActivity.cs" />
+    <Compile Include="UserFilterActivity.cs" />
+    <Compile Include="UserFilterAdapter.cs" />
+    <Compile Include="UserLogActivity.cs" />
+    <Compile Include="UserLogAdapter.cs" />
     <Compile Include="UserMainActivity.cs" />
     <Compile Include="Utilities\InternetAccess.cs" />
     <Compile Include="Utilities\ObjectTypeHelper.cs" />
@@ -326,6 +330,26 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\UserMainLayout.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\UserFilterLayout.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\UserLogItem.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\UserFilterItem.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\UserLogLayout.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

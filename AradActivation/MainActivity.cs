@@ -113,7 +113,7 @@ namespace AradActivation
                 case "وضعیت مانده حساب مشتریان": StartActivity(typeof(CustomerAccountActivity)); break;
                 case "مسدودسازی مشتری": break;
                 case "لاگ عملکرد مشتری": StartActivity(typeof(CustomerFilterActivity)); break;
-                case "لاگ عملکرد کاربر": break;
+                case "لاگ عملکرد کاربر": StartActivity(typeof(UserFilterActivity)); break;
                 case "مسدودسازی کاربر": StartActivity(typeof(UserBlockActivity)); break;
             }
         }
