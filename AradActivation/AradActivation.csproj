@@ -93,8 +93,11 @@
     <Compile Include="ShowPardakhtActivity.cs" />
     <Compile Include="ShowProductActivity.cs" />
     <Compile Include="ShowReceptionActivity.cs" />
+    <Compile Include="ShowUsers.cs" />
+    <Compile Include="ShowUsersAdapter.cs" />
     <Compile Include="UserAdapter.cs" />
     <Compile Include="UserBlockActivity.cs" />
+    <Compile Include="UserMainActivity.cs" />
     <Compile Include="Utilities\InternetAccess.cs" />
     <Compile Include="Utilities\ObjectTypeHelper.cs" />
   </ItemGroup>
@@ -308,6 +311,21 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\CustomerLogItem.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\ShowUsersLayout.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\ShowUsersItem.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\UserMainLayout.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

@@ -109,7 +109,7 @@ namespace AradActivation
             switch (name)
             {
                 case "کد فعالسازی": break;
-                case "مدیریت کاربران": break;
+                case "مدیریت کاربران": StartActivity(typeof(ShowUsers)); break;
                 case "وضعیت مانده حساب مشتریان": StartActivity(typeof(CustomerAccountActivity)); break;
                 case "مسدودسازی مشتری": break;
                 case "لاگ عملکرد مشتری": StartActivity(typeof(CustomerFilterActivity)); break;

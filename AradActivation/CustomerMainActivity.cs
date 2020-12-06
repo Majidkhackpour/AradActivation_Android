@@ -32,7 +32,8 @@ namespace AradActivation
 
             var guid = Intent.GetStringExtra("CusGuid");
             var cusGuid = Guid.Empty;
-            if (!string.IsNullOrEmpty(guid)) cusGuid = Guid.Parse(guid);
+            if (!string.IsNullOrEmpty(guid)) 
+                cusGuid = Guid.Parse(guid);
 
             cus = CustomerBussines.Get(cusGuid);
 
@@ -119,7 +120,6 @@ namespace AradActivation
             Finish();
             return base.OnOptionsItemSelected(item);
         }
-
         private ReturnedSaveFuncInfo CheckValidation()
         {
             var res = new ReturnedSaveFuncInfo();
