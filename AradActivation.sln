@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "..\..\Services\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DepartmentDal", "..\..\Department\Department\DepartmentDal\DepartmentDal.csproj", "{29808FAC-36C9-43BC-AD9A-343D03B6F114}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KargozariHamrah", "KargozariHamrah\KargozariHamrah.csproj", "{05A8E1ED-10B4-4656-A3E8-850B02289A1E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +31,12 @@ Global
 		{29808FAC-36C9-43BC-AD9A-343D03B6F114}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{29808FAC-36C9-43BC-AD9A-343D03B6F114}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{29808FAC-36C9-43BC-AD9A-343D03B6F114}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05A8E1ED-10B4-4656-A3E8-850B02289A1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05A8E1ED-10B4-4656-A3E8-850B02289A1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05A8E1ED-10B4-4656-A3E8-850B02289A1E}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{05A8E1ED-10B4-4656-A3E8-850B02289A1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05A8E1ED-10B4-4656-A3E8-850B02289A1E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05A8E1ED-10B4-4656-A3E8-850B02289A1E}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

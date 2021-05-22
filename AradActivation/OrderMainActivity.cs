@@ -171,7 +171,6 @@ namespace AradActivation
                 order.Guid = Guid.NewGuid();
                 order.Date = DateTime.Now;
                 order.Discount = txtOrderMainDiscount.Text.ParseToDecimal();
-                order.LearningCount = txtOrderMainLearningCount.Text.ParseToInt();
                 order.Modified = DateTime.Now;
                 order.Status = true;
                 order.Sum = lblOrderMainSum.Text.ParseToDecimal();
