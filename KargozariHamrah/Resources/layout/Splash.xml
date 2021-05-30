@@ -11,22 +11,57 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="3"
-        android:id="@+id/linearLayout1" />
-    <LinearLayout
-        android:orientation="vertical"
+        android:id="@+id/linearLayout1" >
+      <TextView
+        android:text="خطا در برقراری ارتباط با سرور"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/lblImeiError"
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="50dp"
+        android:textColor="@android:color/holo_red_dark"/>
+    </LinearLayout>
+      <LinearLayout
+        android:orientation="horizontal"
         android:minWidth="25px"
         android:minHeight="25px"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="3"
         android:id="@+id/linearLayout2">
-        <ImageView
-            android:id="@+id/products"
-            android:layout_width="match_parent"
+        <LinearLayout
+            android:orientation="vertical"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:src="@drawable/arad_icon"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentTop="true"/>
+            android:layout_weight="3"
+            android:id="@+id/linearLayout1"/>
+        <LinearLayout
+            android:orientation="vertical"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:id="@+id/linearLayout11">
+            <ImageView
+                android:id="@+id/products"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/arad_icon"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"/>
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:id="@+id/linearLayout10" />
     </LinearLayout>
     <LinearLayout
         android:orientation="vertical"
@@ -35,5 +70,23 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="3"
-        android:id="@+id/linearLayout3" />
+        android:id="@+id/linearLayout3">
+        <TextView
+            android:text="شناسه فنی دستگاه جاری"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/lblImeiDesc"
+            android:layout_marginTop="50dp"
+            android:layout_marginRight="20dp"/>
+        <TextView
+            android:text=""
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/lblImei"
+            android:textAlignment="center"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="80dp"/>
+    </LinearLayout>
 </LinearLayout>
