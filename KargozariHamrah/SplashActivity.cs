@@ -64,7 +64,7 @@ namespace KargozariHamrah
         {
             try
             {
-                //_customer = CustomerBussines.GetByImei(imei);
+                _customer = CustomerBussines.GetByImei(imei);
             }
             catch (Exception ex)
             {
