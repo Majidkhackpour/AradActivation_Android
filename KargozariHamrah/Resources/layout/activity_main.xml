@@ -9,13 +9,13 @@
     android:minWidth="25px"
     android:minHeight="25px"
     android:layoutDirection="rtl"
-    android:background="#dcdcdc">
+    android:background="@color/With">
     <android.support.v7.widget.Toolbar
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/myToolbar"
         android:minHeight="?android:attr/actionBarSize"
-        android:background="@color/colorPrimary"
+        android:background="@color/RedBackColor"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Dark"/>
     <android.support.v4.widget.DrawerLayout

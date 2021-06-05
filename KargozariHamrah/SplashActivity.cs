@@ -1,14 +1,13 @@
 ﻿using Android.App;
+using Android.Graphics;
 using Android.OS;
 using Android.Support.V7.App;
-using Android.Widget;
-using System.Timers;
-using Android.Graphics;
 using Android.Views;
+using Android.Widget;
 using DepartmentDal.Classes;
-using Java.Lang;
 using KargozariHamrah.Utils;
 using Services;
+using System.Timers;
 using Exception = System.Exception;
 
 namespace KargozariHamrah
@@ -57,7 +56,7 @@ namespace KargozariHamrah
             timer.Stop();
             if (_customer == null)
                 workerThread();
-            else 
+            else
                 StartActivity(typeof(MainActivity));
         }
         private void SetCustomer(string imei)
