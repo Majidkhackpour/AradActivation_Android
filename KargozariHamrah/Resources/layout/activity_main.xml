@@ -27,10 +27,18 @@
             android:layout_height="match_parent"
             android:layout_width="240dp"
             android:choiceMode="singleChoice"
-            android:divider="#818181"
-            android:dividerHeight="1dp"
+            android:divider="@null"
+            android:dividerHeight="0dp"
             android:background="#e5ffff"
             android:layout_gravity="start"
             android:layoutDirection="rtl"/>
+        <ListView
+          android:minWidth="25px"
+          android:minHeight="25px"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:id="@+id/BuildingMainListView"
+          android:divider="@null"
+          android:dividerHeight="8dp"/>
     </android.support.v4.widget.DrawerLayout>
 </LinearLayout>

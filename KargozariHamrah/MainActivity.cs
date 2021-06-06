@@ -11,6 +11,10 @@ using KargozariHamrah.Drawers;
 using Services;
 using System;
 using System.Collections.Generic;
+using DepartmentDal.Classes.Building;
+using KargozariHamrah.Adapters;
+using KargozariHamrah.Utils;
+using Services.AndroidViewModels;
 
 namespace KargozariHamrah
 {
@@ -22,6 +26,8 @@ namespace KargozariHamrah
         private DrawerLayout myDrawer;
         private ListView myListView;
         private bool doubleBackToExitPressedOnce = false;
+        private ListView lstBuildings;
+        private List<BuildingListViewModel> list;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -32,6 +38,7 @@ namespace KargozariHamrah
             myListView = FindViewById<ListView>(Resource.Id.MyListView);
             myDrawer = FindViewById<DrawerLayout>(Resource.Id.myDrawer);
             myToolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.myToolbar);
+            lstBuildings = FindViewById<ListView>(Resource.Id.BuildingMainListView);
 
             SetSupportActionBar(myToolbar);
             SetDrawer();
@@ -50,6 +57,19 @@ namespace KargozariHamrah
                     : Resource.String.CloseDrawer);
             }
             else SupportActionBar.SetTitle(Resource.String.CloseDrawer);
+            BindList();
+        }
+        private void BindList()
+        {
+            try
+            {
+                list = clsBuilding.GetList(CurrentUser.Customer?.HardSerial??"");
+                lstBuildings.Adapter = new BuildingListAdapter(this, list);
+            }
+            catch (Exception ex)
+            {
+                WebErrorLog.ErrorInstence.StartErrorLog(ex);
+            }
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {

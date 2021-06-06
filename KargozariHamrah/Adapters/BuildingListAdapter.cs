@@ -3,6 +3,8 @@ using Android.Views;
 using Android.Widget;
 using Services.AndroidViewModels;
 using System.Collections.Generic;
+using Android.Graphics;
+using KargozariHamrah.Utils;
 
 namespace KargozariHamrah.Adapters
 {
@@ -22,14 +24,18 @@ namespace KargozariHamrah.Adapters
         {
             var view = convertView ?? _context.LayoutInflater.Inflate(Resource.Layout.BuildingItemLayout, null);
 
-            var cust = _list[position];
+            var bu = _list[position];
 
-            //view.FindViewById<TextView>(Resource.Id.lblPardakhtCustName).Text = cust?.PayerName;
-            //view.FindViewById<TextView>(Resource.Id.lblPardakhtDateSh).Text = cust?.DateSh;
-            //view.FindViewById<TextView>(Resource.Id.lblPardakhtNaqd).Text = cust?.NaqdPrice.ToString("N0") + " ریال";
-            //view.FindViewById<TextView>(Resource.Id.lblPardakhtBank).Text = cust?.BankPrice.ToString("N0") + " ریال";
-            //view.FindViewById<TextView>(Resource.Id.lblPardakhtCheck).Text = cust?.Check.ToString("N0") + " ریال";
-
+            view.FindViewById<TextView>(Resource.Id.lblBuildingPrice).Text = bu?.Price;
+            view.FindViewById<TextView>(Resource.Id.lblBuildingAddress).Text = bu?.Address;
+            view.FindViewById<TextView>(Resource.Id.lblTabaqe).Text = bu?.TabaqeCount;
+            view.FindViewById<TextView>(Resource.Id.lblSaleSakht).Text = bu?.SaleSakht;
+            view.FindViewById<TextView>(Resource.Id.lblRoomCount).Text = bu?.RoomCount;
+            view.FindViewById<TextView>(Resource.Id.lblMetrazh).Text = bu?.Metrazh;
+            if (string.IsNullOrEmpty(bu?.ImageName))
+                view.FindViewById<ImageView>(Resource.Id.imgBuilding).SetImageResource(Resource.Drawable.ImageNotAvalable);
+            else
+                view.FindViewById<ImageView>(Resource.Id.imgBuilding).SetImageBitmap(BuildingUtilities.GetImageFromUrl(bu?.ImageName));
             SetFonts(view);
 
             return view;
@@ -38,21 +44,15 @@ namespace KargozariHamrah.Adapters
         public override BuildingListViewModel this[int position] => _list[position];
         private void SetFonts(View view)
         {
-            //var fontYekan = Typeface.CreateFromAsset(_context.Assets, "B Yekan.TTF");
-            //var fontTitr = Typeface.CreateFromAsset(_context.Assets, "B TITR BOLD.TTF");
+            var fontYekan = Typeface.CreateFromAsset(_context.Assets, "B Yekan.TTF");
+            var fontTitr = Typeface.CreateFromAsset(_context.Assets, "B TITR BOLD.TTF");
 
-            //view.FindViewById<TextView>(Resource.Id.lblPardakhtBank).Typeface = fontYekan;
-            //view.FindViewById<TextView>(Resource.Id.lblPardakhtCheck).Typeface = fontYekan;
-            //view.FindViewById<TextView>(Resource.Id.lblPardakhtNaqd).Typeface = fontYekan;
-            //view.FindViewById<TextView>(Resource.Id.lblPardakhtDateSh).Typeface = fontYekan;
-            //view.FindViewById<TextView>(Resource.Id.lblPardakhtCustName).Typeface = fontTitr;
-
-
-
-            //view.FindViewById<TextView>(Resource.Id.PardakhtDateText).Typeface = fontYekan;
-            //view.FindViewById<TextView>(Resource.Id.PardakhtNaqdText).Typeface = fontYekan;
-            //view.FindViewById<TextView>(Resource.Id.PardakhtBankText).Typeface = fontYekan;
-            //view.FindViewById<TextView>(Resource.Id.PardakhtCheckText).Typeface = fontYekan;
+            view.FindViewById<TextView>(Resource.Id.lblBuildingPrice).Typeface = fontTitr;
+            view.FindViewById<TextView>(Resource.Id.lblBuildingAddress).Typeface = fontYekan;
+            view.FindViewById<TextView>(Resource.Id.lblTabaqe).Typeface = fontYekan;
+            view.FindViewById<TextView>(Resource.Id.lblSaleSakht).Typeface = fontYekan;
+            view.FindViewById<TextView>(Resource.Id.lblRoomCount).Typeface = fontYekan;
+            view.FindViewById<TextView>(Resource.Id.lblMetrazh).Typeface = fontYekan;
         }
     }
 }

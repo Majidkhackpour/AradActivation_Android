@@ -19,7 +19,6 @@ namespace KargozariHamrah
         private TextView lblImie;
         private TextView lblImieDesc;
         private TextView lblImieError;
-        private CustomerBussines _customer = null;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -54,7 +53,7 @@ namespace KargozariHamrah
         private void TimerOnElapsed(object sender, ElapsedEventArgs e)
         {
             timer.Stop();
-            if (_customer == null)
+            if (CurrentUser.Customer == null)
                 workerThread();
             else
                 StartActivity(typeof(MainActivity));
@@ -63,12 +62,12 @@ namespace KargozariHamrah
         {
             try
             {
-                _customer = CustomerBussines.GetByImei(imei);
+                CurrentUser.Customer = CustomerBussines.GetByImei(imei);
             }
             catch (Exception ex)
             {
                 WebErrorLog.ErrorInstence.StartErrorLog(ex);
-                _customer = null;
+                CurrentUser.Customer = null;
             }
         }
     }
