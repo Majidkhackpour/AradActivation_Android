@@ -14,7 +14,7 @@ namespace KargozariHamrah.Utils
             {
                 if (!imageName.ToLower().EndsWith(".png") && !imageName.ToLower().EndsWith(".jpg"))
                     imageName += ".jpg";
-                var url = DepartmentDal.Utilities.WebApi + "/BuildingImages/" + imageName;
+                var url = Utilities.WebApi + "/BuildingImages/" + imageName;
                 using var client = new WebClient();
                 var imageBytes = client.DownloadData(url);
                 if (imageBytes != null)

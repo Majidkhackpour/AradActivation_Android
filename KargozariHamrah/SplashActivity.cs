@@ -25,7 +25,7 @@ namespace KargozariHamrah
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             SetContentView(Resource.Layout.Splash);
 
-            timer = new Timer { Interval = 7000 };
+            timer = new Timer { Interval = 10000 };
             timer.Elapsed += TimerOnElapsed;
             timer.Start();
             lblImie = FindViewById<TextView>(Resource.Id.lblImei);
