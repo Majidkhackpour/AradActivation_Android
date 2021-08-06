@@ -20,6 +20,7 @@ namespace KargozariHamrah.Utils
                 if (imageBytes != null)
                     image = BitmapFactory.DecodeByteArray(imageBytes, 0, imageBytes.Length);
             }
+            catch (WebException) { }
             catch (Exception ex)
             {
                 WebErrorLog.ErrorInstence.StartErrorLog(ex);
