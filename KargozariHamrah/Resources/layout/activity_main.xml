@@ -29,7 +29,7 @@
             android:choiceMode="singleChoice"
             android:divider="@null"
             android:dividerHeight="0dp"
-            android:background="#e5ffff"
+            android:background="@color/With"
             android:layout_gravity="start"
             android:layoutDirection="rtl"/>
         <ListView
