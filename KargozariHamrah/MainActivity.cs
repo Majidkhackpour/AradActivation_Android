@@ -11,10 +11,11 @@ using KargozariHamrah.Drawers;
 using Services;
 using System;
 using System.Collections.Generic;
+using Android.Support.V7.Widget;
 using DepartmentDal.Classes.Building;
-using KargozariHamrah.Adapters;
 using KargozariHamrah.Utils;
 using Services.AndroidViewModels;
+using KargozariHamrah.Adapters;
 
 namespace KargozariHamrah
 {
@@ -26,18 +27,19 @@ namespace KargozariHamrah
         private DrawerLayout myDrawer;
         private ListView myListView;
         private bool doubleBackToExitPressedOnce = false;
-        private ListView lstBuildings;
+        private RecyclerView lstBuildings;
         private List<BuildingListViewModel> list;
+        RecyclerView.LayoutManager mLayoutManager;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             SetContentView(Resource.Layout.activity_main);
-
+           // Android.Glide.Forms.Init();
             myListView = FindViewById<ListView>(Resource.Id.MyListView);
             myDrawer = FindViewById<DrawerLayout>(Resource.Id.myDrawer);
             myToolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.myToolbar);
-            lstBuildings = FindViewById<ListView>(Resource.Id.BuildingMainListView);
+            lstBuildings = FindViewById<RecyclerView>(Resource.Id.BuildingMainListView);
 
             SetSupportActionBar(myToolbar);
             SetDrawer();
@@ -62,8 +64,11 @@ namespace KargozariHamrah
         {
             try
             {
-                list = clsBuilding.GetList(CurrentUser.Customer?.HardSerial??"");
-                lstBuildings.Adapter = new BuildingListAdapter(this, list);
+                list = clsBuilding.GetList(CurrentUser.Customer?.HardSerial ?? "");
+                mLayoutManager = new LinearLayoutManager(this);
+                lstBuildings.SetLayoutManager(mLayoutManager);
+                var mAdapter = new ShowBuildingListAdapter(list, this);
+                lstBuildings.SetAdapter(mAdapter);
             }
             catch (Exception ex)
             {
