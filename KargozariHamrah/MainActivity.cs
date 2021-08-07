@@ -11,6 +11,7 @@ using KargozariHamrah.Drawers;
 using Services;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using Android.Support.V7.Widget;
 using DepartmentDal.Classes.Building;
 using KargozariHamrah.Utils;
@@ -30,6 +31,7 @@ namespace KargozariHamrah
         private RecyclerView lstBuildings;
         private List<BuildingListViewModel> list;
         RecyclerView.LayoutManager mLayoutManager;
+        private SwipeRefreshLayout refreshLayout;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -40,6 +42,8 @@ namespace KargozariHamrah
             myDrawer = FindViewById<DrawerLayout>(Resource.Id.myDrawer);
             myToolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.myToolbar);
             lstBuildings = FindViewById<RecyclerView>(Resource.Id.BuildingMainListView);
+            refreshLayout = FindViewById<SwipeRefreshLayout>(Resource.Id.swipeRefreshLayout);
+            refreshLayout.SetColorSchemeColors(Color.Red, Color.Green, Color.Blue, Color.Yellow);
 
             SetSupportActionBar(myToolbar);
             SetDrawer();
@@ -59,6 +63,8 @@ namespace KargozariHamrah
             }
             else SupportActionBar.SetTitle(Resource.String.CloseDrawer);
             BindList();
+
+            refreshLayout.Refresh += SwipeRefreshLayoutMain_Refresh;
         }
         private void BindList()
         {
@@ -130,6 +136,11 @@ namespace KargozariHamrah
                     break;
             }
             return base.OnOptionsItemSelected(item);
+        }
+        private void SwipeRefreshLayoutMain_Refresh(object sender, System.EventArgs e)
+        {
+            BindList();
+            refreshLayout.Refreshing = false;
         }
         protected override void OnSaveInstanceState(Bundle outState)
         {
