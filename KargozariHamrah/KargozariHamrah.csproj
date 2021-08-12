@@ -122,9 +122,9 @@
     <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Department\Department\DepartmentDal\DepartmentDal.csproj">
-      <Project>{29808fac-36c9-43bc-ad9a-343d03b6f114}</Project>
-      <Name>DepartmentDal</Name>
+    <ProjectReference Include="..\..\..\RealState\RealState\WebHesabBussines\WebHesabBussines.csproj">
+      <Project>{f8f30f25-71e7-4e57-b938-4b30a267eaef}</Project>
+      <Name>WebHesabBussines</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\Services\Services\Services\Services.csproj">
       <Project>{dcb5bde2-6238-422d-ad4e-f53afce9bf30}</Project>

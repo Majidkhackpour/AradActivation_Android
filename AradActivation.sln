@@ -3,13 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30413.136
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AradActivation", "AradActivation\AradActivation.csproj", "{F09254DE-ABC4-4CA6-823E-B7D8133C3315}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "..\..\Services\Services\Services\Services.csproj", "{DCB5BDE2-6238-422D-AD4E-F53AFCE9BF30}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DepartmentDal", "..\..\Department\Department\DepartmentDal\DepartmentDal.csproj", "{29808FAC-36C9-43BC-AD9A-343D03B6F114}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KargozariHamrah", "KargozariHamrah\KargozariHamrah.csproj", "{05A8E1ED-10B4-4656-A3E8-850B02289A1E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebHesabBussines", "..\..\RealState\RealState\WebHesabBussines\WebHesabBussines.csproj", "{F8F30F25-71E7-4E57-B938-4B30A267EAEF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,26 +15,20 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{F09254DE-ABC4-4CA6-823E-B7D8133C3315}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F09254DE-ABC4-4CA6-823E-B7D8133C3315}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F09254DE-ABC4-4CA6-823E-B7D8133C3315}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{F09254DE-ABC4-4CA6-823E-B7D8133C3315}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F09254DE-ABC4-4CA6-823E-B7D8133C3315}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F09254DE-ABC4-4CA6-823E-B7D8133C3315}.Release|Any CPU.Deploy.0 = Release|Any CPU
 		{DCB5BDE2-6238-422D-AD4E-F53AFCE9BF30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{DCB5BDE2-6238-422D-AD4E-F53AFCE9BF30}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DCB5BDE2-6238-422D-AD4E-F53AFCE9BF30}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DCB5BDE2-6238-422D-AD4E-F53AFCE9BF30}.Release|Any CPU.Build.0 = Release|Any CPU
-		{29808FAC-36C9-43BC-AD9A-343D03B6F114}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{29808FAC-36C9-43BC-AD9A-343D03B6F114}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{29808FAC-36C9-43BC-AD9A-343D03B6F114}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{29808FAC-36C9-43BC-AD9A-343D03B6F114}.Release|Any CPU.Build.0 = Release|Any CPU
 		{05A8E1ED-10B4-4656-A3E8-850B02289A1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{05A8E1ED-10B4-4656-A3E8-850B02289A1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{05A8E1ED-10B4-4656-A3E8-850B02289A1E}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
 		{05A8E1ED-10B4-4656-A3E8-850B02289A1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{05A8E1ED-10B4-4656-A3E8-850B02289A1E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{05A8E1ED-10B4-4656-A3E8-850B02289A1E}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{F8F30F25-71E7-4E57-B938-4B30A267EAEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8F30F25-71E7-4E57-B938-4B30A267EAEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8F30F25-71E7-4E57-B938-4B30A267EAEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8F30F25-71E7-4E57-B938-4B30A267EAEF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

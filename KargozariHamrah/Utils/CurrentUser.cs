@@ -1,17 +1,14 @@
-﻿using System;
-using Android.App;
+﻿using Android.App;
 using Android.OS;
 using Android.Provider;
-using DepartmentDal.Classes;
 using Services;
+using System;
 
 namespace KargozariHamrah.Utils
 {
     public static class CurrentUser
     {
         private static string _id = "";
-        private static CustomerBussines _cus = null;
-
         public static string Imei
         {
             get
@@ -33,6 +30,5 @@ namespace KargozariHamrah.Utils
                 return _id;
             }
         }
-        public static CustomerBussines Customer { get => _cus; set => _cus = value; }
     }
 }

@@ -5,18 +5,17 @@ using Android.OS;
 using Android.Runtime;
 using Android.Support.V4.Widget;
 using Android.Support.V7.App;
+using Android.Support.V7.Widget;
 using Android.Views;
 using Android.Widget;
+using KargozariHamrah.Adapters;
 using KargozariHamrah.Drawers;
+using KargozariHamrah.Utils;
 using Services;
+using Services.AndroidViewModels;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using Android.Support.V7.Widget;
-using DepartmentDal.Classes.Building;
-using KargozariHamrah.Utils;
-using Services.AndroidViewModels;
-using KargozariHamrah.Adapters;
+using WebHesabBussines;
 
 namespace KargozariHamrah
 {
@@ -37,7 +36,7 @@ namespace KargozariHamrah
             base.OnCreate(savedInstanceState);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             SetContentView(Resource.Layout.activity_main);
-           // Android.Glide.Forms.Init();
+            // Android.Glide.Forms.Init();
             myListView = FindViewById<ListView>(Resource.Id.MyListView);
             myDrawer = FindViewById<DrawerLayout>(Resource.Id.myDrawer);
             myToolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.myToolbar);
@@ -70,7 +69,7 @@ namespace KargozariHamrah
         {
             try
             {
-                list = clsBuilding.GetList(CurrentUser.Customer?.HardSerial ?? "");
+                list = WebBuilding.GetList(WebCustomer.Customer?.HardSerial ?? "");
                 mLayoutManager = new LinearLayoutManager(this);
                 lstBuildings.SetLayoutManager(mLayoutManager);
                 var mAdapter = new ShowBuildingListAdapter(list, this);

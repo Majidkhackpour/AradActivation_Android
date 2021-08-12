@@ -4,10 +4,10 @@ using Android.OS;
 using Android.Support.V7.App;
 using Android.Views;
 using Android.Widget;
-using DepartmentDal.Classes;
 using KargozariHamrah.Utils;
 using Services;
 using System.Timers;
+using WebHesabBussines;
 using Exception = System.Exception;
 
 namespace KargozariHamrah
@@ -53,7 +53,7 @@ namespace KargozariHamrah
         private void TimerOnElapsed(object sender, ElapsedEventArgs e)
         {
             timer.Stop();
-            if (CurrentUser.Customer == null)
+            if (WebCustomer.Customer == null)
                 workerThread();
             else
                 StartActivity(typeof(MainActivity));
@@ -62,12 +62,12 @@ namespace KargozariHamrah
         {
             try
             {
-                CurrentUser.Customer = CustomerBussines.GetByImei(imei);
+                WebCustomer.Customer = WebCustomer.GetByImei(imei);
             }
             catch (Exception ex)
             {
                 WebErrorLog.ErrorInstence.StartErrorLog(ex);
-                CurrentUser.Customer = null;
+                WebCustomer.Customer = null;
             }
         }
     }
