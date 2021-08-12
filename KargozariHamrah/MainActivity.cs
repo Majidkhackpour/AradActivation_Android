@@ -10,7 +10,6 @@ using Android.Views;
 using Android.Widget;
 using KargozariHamrah.Adapters;
 using KargozariHamrah.Drawers;
-using KargozariHamrah.Utils;
 using Services;
 using Services.AndroidViewModels;
 using System;
