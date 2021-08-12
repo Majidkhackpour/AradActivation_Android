@@ -18,8 +18,52 @@
         android:background="@color/Blue"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Dark"/>
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+	    <LinearLayout
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:orientation="horizontal"
+		    android:gravity="right">
+		    <Button
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:text="رهن و اجاره"
+			    android:layout_margin="3dp"
+			    android:background="@drawable/button_border"
+			    android:id="@+id/btnRahn"/>
+		    <Button
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:text="خرید و فروش"
+			    android:layout_margin="3dp"
+			    android:background="@drawable/button_border"
+			    android:id="@+id/btnForoush"/>
+		    <Button
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:text="پیش فروش"
+			    android:layout_margin="3dp"
+			    android:background="@drawable/button_border"
+			    android:id="@+id/btnPishForoush"/>
+		    <Button
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:text="معاوضه"
+			    android:layout_margin="3dp"
+			    android:background="@drawable/button_border"
+			    android:id="@+id/btnMoaveze"/>
+		    <Button
+			    android:layout_width="135.5dp"
+			    android:layout_height="wrap_content"
+			    android:text="مشارکت در ساخت"
+			    android:layout_margin="3dp"
+			    android:background="@drawable/button_border"
+			    android:id="@+id/btnMosharekat"/>
+	    </LinearLayout>
+    </HorizontalScrollView>
     <android.support.v4.widget.DrawerLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/myDrawer">
@@ -61,104 +105,49 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
-	                    <ImageView
-		                    android:layout_width="60dp"
-		                    android:layout_height="match_parent"
-		                    android:src="@drawable/calendar"/>
-	                    <TextView
-		                    android:text="استان"
-		                    android:textAppearance="?android:attr/textAppearanceMedium"
-		                    android:layout_width="wrap_content"
-		                    android:layout_height="wrap_content"
-		                    android:layout_margin="2dp"
-		                    android:gravity="right" />
+                        <ImageView
+                            android:layout_width="60dp"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/calendar"/>
+                        <TextView
+                            android:text="استان"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="2dp"
+                            android:gravity="right" />
                     </LinearLayout>
-	                <LinearLayout
-		                android:layout_width="match_parent"
-		                android:layout_height="wrap_content"
-		                android:orientation="horizontal">
-		                <ImageView
-			                android:layout_width="60dp"
-			                android:layout_height="match_parent"
-			                android:src="@drawable/calendar"/>
-		                <TextView
-			                android:text="استان"
-			                android:textAppearance="?android:attr/textAppearanceMedium"
-			                android:layout_width="wrap_content"
-			                android:layout_height="wrap_content"
-			                android:layout_margin="2dp"
-			                android:gravity="right" />
-	                </LinearLayout>
-	                <LinearLayout
-		                android:layout_width="match_parent"
-		                android:layout_height="wrap_content"
-		                android:orientation="horizontal">
-		                <ImageView
-			                android:layout_width="60dp"
-			                android:layout_height="match_parent"
-			                android:src="@drawable/calendar"/>
-		                <TextView
-			                android:text="استان"
-			                android:textAppearance="?android:attr/textAppearanceMedium"
-			                android:layout_width="wrap_content"
-			                android:layout_height="wrap_content"
-			                android:layout_margin="2dp"
-			                android:gravity="right" />
-	                </LinearLayout>
-                    <View
+                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:background="@color/Black"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginLeft="30dp"
-                        android:layout_marginRight="30dp"/>
-                    <LinearLayout
-	                    android:layout_width="match_parent"
-	                    android:layout_height="wrap_content"
-	                    android:orientation="horizontal">
-	                    <ImageView
-		                    android:layout_width="60dp"
-		                    android:layout_height="match_parent"
-		                    android:src="@drawable/calendar"/>
-	                    <TextView
-		                    android:text="استان"
-		                    android:textAppearance="?android:attr/textAppearanceMedium"
-		                    android:layout_width="wrap_content"
-		                    android:layout_height="wrap_content"
-		                    android:layout_margin="2dp"
-		                    android:gravity="right" />
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <ImageView
+                            android:layout_width="60dp"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/calendar"/>
+                        <TextView
+                            android:text="استان"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="2dp"
+                            android:gravity="right" />
                     </LinearLayout>
                     <LinearLayout
-	                    android:layout_width="match_parent"
-	                    android:layout_height="wrap_content"
-	                    android:orientation="horizontal">
-	                    <ImageView
-		                    android:layout_width="60dp"
-		                    android:layout_height="match_parent"
-		                    android:src="@drawable/calendar"/>
-	                    <TextView
-		                    android:text="استان"
-		                    android:textAppearance="?android:attr/textAppearanceMedium"
-		                    android:layout_width="wrap_content"
-		                    android:layout_height="wrap_content"
-		                    android:layout_margin="2dp"
-		                    android:gravity="right" />
-                    </LinearLayout>
-                    <LinearLayout
-	                    android:layout_width="match_parent"
-	                    android:layout_height="wrap_content"
-	                    android:orientation="horizontal">
-	                    <ImageView
-		                    android:layout_width="60dp"
-		                    android:layout_height="match_parent"
-		                    android:src="@drawable/calendar"/>
-	                    <TextView
-		                    android:text="استان"
-		                    android:textAppearance="?android:attr/textAppearanceMedium"
-		                    android:layout_width="wrap_content"
-		                    android:layout_height="wrap_content"
-		                    android:layout_margin="2dp"
-		                    android:gravity="right" />
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <ImageView
+                            android:layout_width="60dp"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/calendar"/>
+                        <TextView
+                            android:text="استان"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="2dp"
+                            android:gravity="right" />
                     </LinearLayout>
                     <View
                         android:layout_width="match_parent"
@@ -168,52 +157,52 @@
                         android:layout_marginLeft="30dp"
                         android:layout_marginRight="30dp"/>
                     <LinearLayout
-	                    android:layout_width="match_parent"
-	                    android:layout_height="wrap_content"
-	                    android:orientation="horizontal">
-	                    <ImageView
-		                    android:layout_width="60dp"
-		                    android:layout_height="match_parent"
-		                    android:src="@drawable/calendar"/>
-	                    <TextView
-		                    android:text="استان"
-		                    android:textAppearance="?android:attr/textAppearanceMedium"
-		                    android:layout_width="wrap_content"
-		                    android:layout_height="wrap_content"
-		                    android:layout_margin="2dp"
-		                    android:gravity="right" />
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <ImageView
+                            android:layout_width="60dp"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/calendar"/>
+                        <TextView
+                            android:text="استان"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="2dp"
+                            android:gravity="right" />
                     </LinearLayout>
                     <LinearLayout
-	                    android:layout_width="match_parent"
-	                    android:layout_height="wrap_content"
-	                    android:orientation="horizontal">
-	                    <ImageView
-		                    android:layout_width="60dp"
-		                    android:layout_height="match_parent"
-		                    android:src="@drawable/calendar"/>
-	                    <TextView
-		                    android:text="استان"
-		                    android:textAppearance="?android:attr/textAppearanceMedium"
-		                    android:layout_width="wrap_content"
-		                    android:layout_height="wrap_content"
-		                    android:layout_margin="2dp"
-		                    android:gravity="right" />
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <ImageView
+                            android:layout_width="60dp"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/calendar"/>
+                        <TextView
+                            android:text="استان"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="2dp"
+                            android:gravity="right" />
                     </LinearLayout>
                     <LinearLayout
-	                    android:layout_width="match_parent"
-	                    android:layout_height="wrap_content"
-	                    android:orientation="horizontal">
-	                    <ImageView
-		                    android:layout_width="60dp"
-		                    android:layout_height="match_parent"
-		                    android:src="@drawable/calendar"/>
-	                    <TextView
-		                    android:text="استان"
-		                    android:textAppearance="?android:attr/textAppearanceMedium"
-		                    android:layout_width="wrap_content"
-		                    android:layout_height="wrap_content"
-		                    android:layout_margin="2dp"
-		                    android:gravity="right" />
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <ImageView
+                            android:layout_width="60dp"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/calendar"/>
+                        <TextView
+                            android:text="استان"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="2dp"
+                            android:gravity="right" />
                     </LinearLayout>
                     <View
                         android:layout_width="match_parent"
@@ -223,52 +212,52 @@
                         android:layout_marginLeft="30dp"
                         android:layout_marginRight="30dp"/>
                     <LinearLayout
-	                    android:layout_width="match_parent"
-	                    android:layout_height="wrap_content"
-	                    android:orientation="horizontal">
-	                    <ImageView
-		                    android:layout_width="60dp"
-		                    android:layout_height="match_parent"
-		                    android:src="@drawable/calendar"/>
-	                    <TextView
-		                    android:text="استان"
-		                    android:textAppearance="?android:attr/textAppearanceMedium"
-		                    android:layout_width="wrap_content"
-		                    android:layout_height="wrap_content"
-		                    android:layout_margin="2dp"
-		                    android:gravity="right" />
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <ImageView
+                            android:layout_width="60dp"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/calendar"/>
+                        <TextView
+                            android:text="استان"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="2dp"
+                            android:gravity="right" />
                     </LinearLayout>
                     <LinearLayout
-	                    android:layout_width="match_parent"
-	                    android:layout_height="wrap_content"
-	                    android:orientation="horizontal">
-	                    <ImageView
-		                    android:layout_width="60dp"
-		                    android:layout_height="match_parent"
-		                    android:src="@drawable/calendar"/>
-	                    <TextView
-		                    android:text="استان"
-		                    android:textAppearance="?android:attr/textAppearanceMedium"
-		                    android:layout_width="wrap_content"
-		                    android:layout_height="wrap_content"
-		                    android:layout_margin="2dp"
-		                    android:gravity="right" />
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <ImageView
+                            android:layout_width="60dp"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/calendar"/>
+                        <TextView
+                            android:text="استان"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="2dp"
+                            android:gravity="right" />
                     </LinearLayout>
                     <LinearLayout
-	                    android:layout_width="match_parent"
-	                    android:layout_height="wrap_content"
-	                    android:orientation="horizontal">
-	                    <ImageView
-		                    android:layout_width="60dp"
-		                    android:layout_height="match_parent"
-		                    android:src="@drawable/calendar"/>
-	                    <TextView
-		                    android:text="استان"
-		                    android:textAppearance="?android:attr/textAppearanceMedium"
-		                    android:layout_width="wrap_content"
-		                    android:layout_height="wrap_content"
-		                    android:layout_margin="2dp"
-		                    android:gravity="right" />
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <ImageView
+                            android:layout_width="60dp"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/calendar"/>
+                        <TextView
+                            android:text="استان"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="2dp"
+                            android:gravity="right" />
                     </LinearLayout>
                     <View
                         android:layout_width="match_parent"
@@ -278,20 +267,75 @@
                         android:layout_marginLeft="30dp"
                         android:layout_marginRight="30dp"/>
                     <LinearLayout
-	                    android:layout_width="match_parent"
-	                    android:layout_height="wrap_content"
-	                    android:orientation="horizontal">
-	                    <ImageView
-		                    android:layout_width="60dp"
-		                    android:layout_height="match_parent"
-		                    android:src="@drawable/calendar"/>
-	                    <TextView
-		                    android:text="استان"
-		                    android:textAppearance="?android:attr/textAppearanceMedium"
-		                    android:layout_width="wrap_content"
-		                    android:layout_height="wrap_content"
-		                    android:layout_margin="2dp"
-		                    android:gravity="right" />
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <ImageView
+                            android:layout_width="60dp"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/calendar"/>
+                        <TextView
+                            android:text="استان"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="2dp"
+                            android:gravity="right" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <ImageView
+                            android:layout_width="60dp"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/calendar"/>
+                        <TextView
+                            android:text="استان"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="2dp"
+                            android:gravity="right" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <ImageView
+                            android:layout_width="60dp"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/calendar"/>
+                        <TextView
+                            android:text="استان"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="2dp"
+                            android:gravity="right" />
+                    </LinearLayout>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/Black"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="30dp"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <ImageView
+                            android:layout_width="60dp"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/calendar"/>
+                        <TextView
+                            android:text="استان"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="2dp"
+                            android:gravity="right" />
                     </LinearLayout>
                 </LinearLayout>
             </ScrollView>

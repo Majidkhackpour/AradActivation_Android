@@ -28,6 +28,12 @@ namespace KargozariHamrah
         RecyclerView.LayoutManager mLayoutManager;
         private SwipeRefreshLayout refreshLayout;
         private ActionBarDrawerToggle _toggle;
+        private Button btnRahn;
+        private Button btnForoush;
+        private Button btnPishForoush;
+        private Button btnMoaveze;
+        private Button btnMosharekat;
+        private EnRequestType _type = EnRequestType.None;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -40,8 +46,14 @@ namespace KargozariHamrah
             refreshLayout = FindViewById<SwipeRefreshLayout>(Resource.Id.swipeRefreshLayout);
             refreshLayout.SetColorSchemeColors(Color.Red, Color.Green, Color.Blue, Color.Yellow);
 
+            btnRahn = FindViewById<Button>(Resource.Id.btnRahn);
+            btnForoush = FindViewById<Button>(Resource.Id.btnForoush);
+            btnMoaveze = FindViewById<Button>(Resource.Id.btnMoaveze);
+            btnMosharekat = FindViewById<Button>(Resource.Id.btnMosharekat);
+            btnPishForoush = FindViewById<Button>(Resource.Id.btnPishForoush);
+
             SetSupportActionBar(myToolbar);
-            SetDrawer();
+            SetUi();
 
             SupportActionBar.SetHomeButtonEnabled(true);
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
@@ -56,6 +68,75 @@ namespace KargozariHamrah
             BindList();
 
             refreshLayout.Refresh += SwipeRefreshLayoutMain_Refresh;
+            btnRahn.Click += BtnRahnOnClick;
+            btnForoush.Click += BtnForoushOnClick;
+            btnMoaveze.Click += BtnMoavezeOnClick;
+            btnMosharekat.Click += BtnMosharekatOnClick;
+            btnPishForoush.Click += BtnPishForoushOnClick;
+
+            btnRahn.PerformClick();
+        }
+
+        private void BtnPishForoushOnClick(object sender, EventArgs e)
+        {
+            if (_type == EnRequestType.PishForush) return;
+            _type = EnRequestType.PishForush;
+            RefreshButtons();
+            btnPishForoush.SetTextColor(Color.White);
+            btnPishForoush.SetBackgroundColor(new Color(GetColor(Resource.Color.Blue)));
+        }
+        private void BtnMosharekatOnClick(object sender, EventArgs e)
+        {
+            if (_type == EnRequestType.Mosharekat) return;
+            _type = EnRequestType.Mosharekat;
+            RefreshButtons();
+            btnMosharekat.SetTextColor(Color.White);
+            btnMosharekat.SetBackgroundColor(new Color(GetColor(Resource.Color.Blue)));
+        }
+        private void BtnMoavezeOnClick(object sender, EventArgs e)
+        {
+            if (_type == EnRequestType.Moavezeh) return;
+            _type = EnRequestType.Moavezeh;
+            RefreshButtons();
+            btnMoaveze.SetTextColor(Color.White);
+            btnMoaveze.SetBackgroundColor(new Color(GetColor(Resource.Color.Blue)));
+        }
+        private void BtnForoushOnClick(object sender, EventArgs e)
+        {
+            if (_type == EnRequestType.Forush) return;
+            _type = EnRequestType.Forush;
+            RefreshButtons();
+            btnForoush.SetTextColor(Color.White);
+            btnForoush.SetBackgroundColor(new Color(GetColor(Resource.Color.Blue)));
+        }
+        private void BtnRahnOnClick(object sender, EventArgs e)
+        {
+            if (_type == EnRequestType.Rahn) return;
+            _type = EnRequestType.Rahn;
+            RefreshButtons();
+            btnRahn.SetTextColor(Color.White);
+            btnRahn.SetBackgroundColor(new Color(GetColor(Resource.Color.Blue)));
+        }
+        private void RefreshButtons()
+        {
+            try
+            {
+                btnRahn.SetTextColor(Color.Black);
+                btnForoush.SetTextColor(Color.Black);
+                btnMoaveze.SetTextColor(Color.Black);
+                btnMosharekat.SetTextColor(Color.Black);
+                btnPishForoush.SetTextColor(Color.Black);
+
+                btnRahn.Background = GetDrawable(Resource.Drawable.Button_Border);
+                btnForoush.Background = GetDrawable(Resource.Drawable.Button_Border);
+                btnMoaveze.Background = GetDrawable(Resource.Drawable.Button_Border);
+                btnMosharekat.Background = GetDrawable(Resource.Drawable.Button_Border);
+                btnPishForoush.Background = GetDrawable(Resource.Drawable.Button_Border);
+            }
+            catch (Exception ex)
+            {
+                WebErrorLog.ErrorInstence.StartErrorLog(ex);
+            }
         }
         private void BindList()
         {
@@ -78,26 +159,13 @@ namespace KargozariHamrah
 
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
-        private void SetDrawer()
+        private void SetUi()
         {
             var font = Typeface.CreateFromAsset(Assets, "B Yekan.TTF");
-            var _list = new List<string>
-            {
-                $"کاربر جاری: ",
-                $"سطح دسترسی: ",
-                $"ساعت ورود: {DateTime.Now.ToShortTimeString()}",
-                $"{Calendar.GetFullCalendar()}",
-                $"نسخه: {Application.Context.ApplicationContext.PackageManager.GetPackageInfo(Application.Context.ApplicationContext.PackageName, 0).VersionName}",
-                "",
-                "کد فعالسازی",
-                "مدیریت کاربران",
-                "وضعیت مانده حساب مشتریان",
-                "لاگ عملکرد مشتری",
-                "لاگ عملکرد کاربر",
-                "مسدودسازی کاربر",
-                "مسدودسازی مشتری"
-            };
-            //myListView.Adapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleListItem1, _list);
+            btnRahn.Typeface = font;
+            btnForoush.Typeface = font;
+            btnMosharekat.Typeface = font;
+            btnMoaveze.Typeface = font;
         }
         public override void OnBackPressed()
         {
