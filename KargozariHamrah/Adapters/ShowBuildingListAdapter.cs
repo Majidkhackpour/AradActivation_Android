@@ -28,7 +28,7 @@ namespace KargozariHamrah.Adapters
             vh.RoomCount.Text = mHolder[position].RoomCount;
             vh.Metrazh.Text = mHolder[position].Metrazh;
             if (string.IsNullOrEmpty(mHolder[position].ImageName))
-                vh.Image.SetImageResource(Resource.Drawable.ImageNotAvalable);
+                vh.Image.SetImageResource(Resource.Drawable.Arad_NotAwailable);
             else
             {
                // GlideApp
