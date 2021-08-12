@@ -61,7 +61,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Adapters\ShowBuildingListAdapter.cs" />
-    <Compile Include="Drawers\ManageDrawer.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -159,11 +158,6 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\BuildingInfoLayout.xml">
-      <SubType>Designer</SubType>
-    </AndroidResource>
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\layout\Drawer.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

@@ -9,7 +9,6 @@ using Android.Support.V7.Widget;
 using Android.Views;
 using Android.Widget;
 using KargozariHamrah.Adapters;
-using KargozariHamrah.Drawers;
 using Services;
 using Services.AndroidViewModels;
 using System;
@@ -22,23 +21,21 @@ namespace KargozariHamrah
     public class MainActivity : AppCompatActivity
     {
         private Android.Support.V7.Widget.Toolbar myToolbar;
-        private ManageDrawer manager;
         private DrawerLayout myDrawer;
-        private ListView myListView;
         private bool doubleBackToExitPressedOnce = false;
         private RecyclerView lstBuildings;
         private List<BuildingListViewModel> list;
         RecyclerView.LayoutManager mLayoutManager;
         private SwipeRefreshLayout refreshLayout;
+        private ActionBarDrawerToggle _toggle;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             SetContentView(Resource.Layout.activity_main);
-            // Android.Glide.Forms.Init();
-            myListView = FindViewById<ListView>(Resource.Id.MyListView);
             myDrawer = FindViewById<DrawerLayout>(Resource.Id.myDrawer);
             myToolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.myToolbar);
+            _toggle = new ActionBarDrawerToggle(this, myDrawer, myToolbar, 0, 1);
             lstBuildings = FindViewById<RecyclerView>(Resource.Id.BuildingMainListView);
             refreshLayout = FindViewById<SwipeRefreshLayout>(Resource.Id.swipeRefreshLayout);
             refreshLayout.SetColorSchemeColors(Color.Red, Color.Green, Color.Blue, Color.Yellow);
@@ -46,13 +43,9 @@ namespace KargozariHamrah
             SetSupportActionBar(myToolbar);
             SetDrawer();
 
-            myListView.Tag = 0;
-            manager = new ManageDrawer(this, myDrawer, Resource.String.OpenDrawer, Resource.String.CloseDrawer);
-            myDrawer.SetDrawerListener(manager);
             SupportActionBar.SetHomeButtonEnabled(true);
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
             SupportActionBar.SetDisplayShowTitleEnabled(true);
-            manager.SyncState();
             if (savedInstanceState != null)
             {
                 SupportActionBar.SetTitle(savedInstanceState.GetString("DrawerState") == "Opened"
@@ -104,7 +97,7 @@ namespace KargozariHamrah
                 "مسدودسازی کاربر",
                 "مسدودسازی مشتری"
             };
-            myListView.Adapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleListItem1, _list);
+            //myListView.Adapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleListItem1, _list);
         }
         public override void OnBackPressed()
         {
@@ -126,13 +119,7 @@ namespace KargozariHamrah
         }
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
-            switch (item.ItemId)
-            {
-                case Android.Resource.Id.Home:
-                    myDrawer.CloseDrawer(myListView);
-                    manager.OnOptionsItemSelected(item);
-                    break;
-            }
+            if (_toggle.OnOptionsItemSelected(item)) return true;
             return base.OnOptionsItemSelected(item);
         }
         private void SwipeRefreshLayoutMain_Refresh(object sender, System.EventArgs e)
@@ -147,12 +134,12 @@ namespace KargozariHamrah
         }
         protected override void OnPostCreate(Bundle savedInstanceState)
         {
-            manager.SyncState();
+            _toggle.SyncState();
             base.OnPostCreate(savedInstanceState);
         }
         public override void OnConfigurationChanged(Configuration newConfig)
         {
-            manager.OnConfigurationChanged(newConfig);
+            _toggle.OnConfigurationChanged(newConfig);
             base.OnConfigurationChanged(newConfig);
         }
     }
