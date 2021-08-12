@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    card_view:cardCornerRadius="25dp"
+    card_view:cardElevation="20dp"
+    card_view:contentPadding="10dp"
+    android:minWidth="25px"
+    android:minHeight="25px"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/cardView1"
+    android:layout_centerInParent="true"
+    android:background="@color/With"
+    android:layout_marginTop="10dp">
+    <LinearLayout
+        android:orientation="vertical"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout1">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="145dp"
+            android:src="@drawable/arad_notawailable"
+            android:scaleType="fitStart"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="right"
+            android:layout_marginTop="10dp">
+	        <TextView
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="20,000,000 تومان"
+		        android:layout_marginRight="10dp"
+		        android:textAppearance="?android:attr/textAppearanceSmall"
+		        android:textColor="@color/Black"/>
+	        <TextView
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="قیمت رهن:"
+		        android:layout_marginRight="50dp"
+		        android:textAppearance="?android:attr/textAppearanceSmall"
+		        android:textColor="@color/Black"/>
+	        <TextView
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="3 ساعت پیش"
+		        android:layout_marginRight="10dp"
+		        android:textAppearance="?android:attr/textAppearanceSmall"
+		        android:textColor="@android:color/darker_gray"/>
+	        <ImageView
+		        android:layout_width="20dp"
+		        android:layout_height="20dp"
+		        android:src="@drawable/timer"
+		        android:scaleType="fitXY"/>
+        </LinearLayout>
+        <LinearLayout
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:orientation="horizontal"
+	        android:gravity="right"
+	        android:layout_marginTop="10dp">
+	        <TextView
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="20,000,000 تومان"
+		        android:layout_marginRight="10dp"
+		        android:textAppearance="?android:attr/textAppearanceSmall"
+		        android:textColor="@color/Black"/>
+	        <TextView
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="قیمت اجاره:"
+		        android:layout_marginRight="50dp"
+		        android:textAppearance="?android:attr/textAppearanceSmall"
+		        android:textColor="@color/Black"/>
+	        <TextView
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="ویلا-مسکونی"
+		        android:layout_marginRight="32dp"
+		        android:textAppearance="?android:attr/textAppearanceSmall"
+		        android:textColor="@android:color/darker_gray"/>
+        </LinearLayout>
+        <LinearLayout
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:orientation="horizontal"
+	        android:gravity="right"
+	        android:layout_marginTop="10dp">
+	        <TextView
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="200 متر"
+		        android:layout_marginRight="32dp"
+		        android:textAppearance="?android:attr/textAppearanceSmall"
+		        android:textColor="@android:color/darker_gray"/>
+	        <TextView
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="4 خواب"
+		        android:layout_marginRight="32dp"
+		        android:textAppearance="?android:attr/textAppearanceSmall"
+		        android:textColor="@android:color/darker_gray"/>
+	        <TextView
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="1380"
+		        android:layout_marginRight="32dp"
+		        android:textAppearance="?android:attr/textAppearanceSmall"
+		        android:textColor="@android:color/darker_gray"/>
+	        <TextView
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="یک طبقه"
+		        android:layout_marginRight="32dp"
+		        android:textAppearance="?android:attr/textAppearanceSmall"
+		        android:textColor="@android:color/darker_gray"/>
+        </LinearLayout>
+    </LinearLayout>
+</android.support.v7.widget.CardView>
