@@ -172,6 +172,7 @@ namespace KargozariHamrah
             btnRahn.Typeface = font;
             btnForoush.Typeface = font;
             btnMosharekat.Typeface = font;
+            btnPishForoush.Typeface = font;
         }
         public override void OnBackPressed()
         {
