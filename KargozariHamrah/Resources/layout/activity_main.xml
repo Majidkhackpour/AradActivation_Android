@@ -48,13 +48,6 @@
 			    android:background="@drawable/button_border"
 			    android:id="@+id/btnPishForoush"/>
 		    <Button
-			    android:layout_width="wrap_content"
-			    android:layout_height="wrap_content"
-			    android:text="معاوضه"
-			    android:layout_margin="3dp"
-			    android:background="@drawable/button_border"
-			    android:id="@+id/btnMoaveze"/>
-		    <Button
 			    android:layout_width="135.5dp"
 			    android:layout_height="wrap_content"
 			    android:text="مشارکت در ساخت"

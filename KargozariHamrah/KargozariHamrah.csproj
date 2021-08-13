@@ -60,7 +60,8 @@
     <Reference Include="System.Numerics.Vectors" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Adapters\ShowBuildingListAdapter.cs" />
+    <Compile Include="Adapters\ShowBuildingListRahnAdapter.cs" />
+    <Compile Include="Adapters\ShowBuildingListSellAdapter.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -137,11 +138,6 @@
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\BuildingItemLayout.xml">
-      <SubType>Designer</SubType>
-    </AndroidResource>
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\drawable\ImageNotAvalable.png" />
   </ItemGroup>
   <ItemGroup>
@@ -177,6 +173,11 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\Button_Border.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\BuildingSellItemLayout.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

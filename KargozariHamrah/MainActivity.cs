@@ -31,7 +31,6 @@ namespace KargozariHamrah
         private Button btnRahn;
         private Button btnForoush;
         private Button btnPishForoush;
-        private Button btnMoaveze;
         private Button btnMosharekat;
         private EnRequestType _type = EnRequestType.None;
         protected override void OnCreate(Bundle savedInstanceState)
@@ -48,7 +47,6 @@ namespace KargozariHamrah
 
             btnRahn = FindViewById<Button>(Resource.Id.btnRahn);
             btnForoush = FindViewById<Button>(Resource.Id.btnForoush);
-            btnMoaveze = FindViewById<Button>(Resource.Id.btnMoaveze);
             btnMosharekat = FindViewById<Button>(Resource.Id.btnMosharekat);
             btnPishForoush = FindViewById<Button>(Resource.Id.btnPishForoush);
 
@@ -65,12 +63,10 @@ namespace KargozariHamrah
                     : Resource.String.CloseDrawer);
             }
             else SupportActionBar.SetTitle(Resource.String.CloseDrawer);
-            BindList();
 
             refreshLayout.Refresh += SwipeRefreshLayoutMain_Refresh;
             btnRahn.Click += BtnRahnOnClick;
             btnForoush.Click += BtnForoushOnClick;
-            btnMoaveze.Click += BtnMoavezeOnClick;
             btnMosharekat.Click += BtnMosharekatOnClick;
             btnPishForoush.Click += BtnPishForoushOnClick;
 
@@ -84,6 +80,8 @@ namespace KargozariHamrah
             RefreshButtons();
             btnPishForoush.SetTextColor(Color.White);
             btnPishForoush.SetBackgroundColor(new Color(GetColor(Resource.Color.Blue)));
+
+            BindList();
         }
         private void BtnMosharekatOnClick(object sender, EventArgs e)
         {
@@ -92,14 +90,8 @@ namespace KargozariHamrah
             RefreshButtons();
             btnMosharekat.SetTextColor(Color.White);
             btnMosharekat.SetBackgroundColor(new Color(GetColor(Resource.Color.Blue)));
-        }
-        private void BtnMoavezeOnClick(object sender, EventArgs e)
-        {
-            if (_type == EnRequestType.Moavezeh) return;
-            _type = EnRequestType.Moavezeh;
-            RefreshButtons();
-            btnMoaveze.SetTextColor(Color.White);
-            btnMoaveze.SetBackgroundColor(new Color(GetColor(Resource.Color.Blue)));
+
+            BindList();
         }
         private void BtnForoushOnClick(object sender, EventArgs e)
         {
@@ -108,6 +100,8 @@ namespace KargozariHamrah
             RefreshButtons();
             btnForoush.SetTextColor(Color.White);
             btnForoush.SetBackgroundColor(new Color(GetColor(Resource.Color.Blue)));
+
+            BindList();
         }
         private void BtnRahnOnClick(object sender, EventArgs e)
         {
@@ -116,6 +110,8 @@ namespace KargozariHamrah
             RefreshButtons();
             btnRahn.SetTextColor(Color.White);
             btnRahn.SetBackgroundColor(new Color(GetColor(Resource.Color.Blue)));
+
+            BindList();
         }
         private void RefreshButtons()
         {
@@ -123,13 +119,11 @@ namespace KargozariHamrah
             {
                 btnRahn.SetTextColor(Color.Black);
                 btnForoush.SetTextColor(Color.Black);
-                btnMoaveze.SetTextColor(Color.Black);
                 btnMosharekat.SetTextColor(Color.Black);
                 btnPishForoush.SetTextColor(Color.Black);
 
                 btnRahn.Background = GetDrawable(Resource.Drawable.Button_Border);
                 btnForoush.Background = GetDrawable(Resource.Drawable.Button_Border);
-                btnMoaveze.Background = GetDrawable(Resource.Drawable.Button_Border);
                 btnMosharekat.Background = GetDrawable(Resource.Drawable.Button_Border);
                 btnPishForoush.Background = GetDrawable(Resource.Drawable.Button_Border);
             }
@@ -142,11 +136,24 @@ namespace KargozariHamrah
         {
             try
             {
-                list = WebBuilding.GetList(WebCustomer.Customer?.HardSerial ?? "");
+                list = WebBuilding.GetList(_type);
                 mLayoutManager = new LinearLayoutManager(this);
                 lstBuildings.SetLayoutManager(mLayoutManager);
-                var mAdapter = new ShowBuildingListAdapter(list, this);
-                lstBuildings.SetAdapter(mAdapter);
+                switch (_type)
+                {
+                    case EnRequestType.Rahn:
+                        var mAdapter = new ShowBuildingListRahnAdapter(list, this);
+                        lstBuildings.SetAdapter(mAdapter);
+                        break;
+                    case EnRequestType.Forush:
+                        var mAdapterSell = new ShowBuildingListSellAdapter(list, this);
+                        lstBuildings.SetAdapter(mAdapterSell);
+                        break;
+                    case EnRequestType.PishForush:
+                        break;
+                    case EnRequestType.Mosharekat:
+                        break;
+                }
             }
             catch (Exception ex)
             {
@@ -165,7 +172,6 @@ namespace KargozariHamrah
             btnRahn.Typeface = font;
             btnForoush.Typeface = font;
             btnMosharekat.Typeface = font;
-            btnMoaveze.Typeface = font;
         }
         public override void OnBackPressed()
         {
