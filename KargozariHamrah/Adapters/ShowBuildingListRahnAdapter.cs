@@ -4,6 +4,7 @@ using Android.Graphics;
 using Android.Support.V7.Widget;
 using Android.Views;
 using Android.Widget;
+using Bumptech.Glide;
 using KargozariHamrah.Utils;
 using Services.AndroidViewModels;
 
@@ -33,15 +34,7 @@ namespace KargozariHamrah.Adapters
             if (string.IsNullOrEmpty(mHolder[position].ImageName))
                 vh.Image.SetImageResource(Resource.Drawable.Arad_NotAwailable);
             else
-            {
-                // GlideApp
-                //     .with(myFragment)
-                //     .load(url)
-                //     .centerCrop()
-                //     .placeholder(R.drawable.loading_spinner)
-                //     .into(myImageView);
-                vh.Image.SetImageBitmap(BuildingUtilities.GetImageFromUrl(mHolder[position].ImageName));
-            }
+                Glide.With(vh.Context).Load(mHolder[position].ImageName).CenterCrop().Into(vh.Image);
         }
 
         public override RecyclerView.ViewHolder OnCreateViewHolder(ViewGroup parent, int viewType)
@@ -68,6 +61,7 @@ namespace KargozariHamrah.Adapters
         public TextView RoomCount { get; private set; }
         public TextView Metrazh { get; private set; }
         public ImageView Image { get; private set; }
+        public Activity Context { get; set; }
 
         public BuildingListRahnHolder(View itemView, Activity _context) : base(itemView)
         {
@@ -83,6 +77,7 @@ namespace KargozariHamrah.Adapters
             RoomCount = itemView.FindViewById<TextView>(Resource.Id.lblBuildingRahn_RoomCount);
             Metrazh = itemView.FindViewById<TextView>(Resource.Id.lblBuildingRahn_Metrazh);
             Image = itemView.FindViewById<ImageView>(Resource.Id.imgBuildingRahn);
+            Context = _context;
             SetFonts(itemView, _context);
         }
         private void SetFonts(View view, Activity _context)
