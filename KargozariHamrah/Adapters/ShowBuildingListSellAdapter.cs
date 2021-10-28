@@ -3,10 +3,9 @@ using Android.Graphics;
 using Android.Support.V7.Widget;
 using Android.Views;
 using Android.Widget;
-using KargozariHamrah.Utils;
+using Bumptech.Glide;
 using Services.AndroidViewModels;
 using System.Collections.Generic;
-using Bumptech.Glide;
 
 namespace KargozariHamrah.Adapters
 {
@@ -33,7 +32,7 @@ namespace KargozariHamrah.Adapters
             if (string.IsNullOrEmpty(mHolder[position].ImageName))
                 vh.Image.SetImageResource(Resource.Drawable.Arad_NotAwailable);
             else
-                Glide.With(vh.Context).Load(mHolder[position].ImageName).CenterCrop().Into(vh.Image);
+                Glide.With(_context).Load(mHolder[position].ImageName).CenterCrop().Into(vh.Image);
         }
 
         public override RecyclerView.ViewHolder OnCreateViewHolder(ViewGroup parent, int viewType)
@@ -58,7 +57,6 @@ namespace KargozariHamrah.Adapters
         public TextView RoomCount { get; private set; }
         public TextView Metrazh { get; private set; }
         public ImageView Image { get; private set; }
-        public Activity Context { get; set; }
 
         public BuildingListSellHolder(View itemView, Activity _context) : base(itemView)
         {
@@ -72,7 +70,6 @@ namespace KargozariHamrah.Adapters
             RoomCount = itemView.FindViewById<TextView>(Resource.Id.lblBuildingSell_RoomCount);
             Metrazh = itemView.FindViewById<TextView>(Resource.Id.lblBuildingSell_Metrazh);
             Image = itemView.FindViewById<ImageView>(Resource.Id.imgBuildingSell);
-            Context = _context;
             SetFonts(itemView, _context);
         }
         private void SetFonts(View view, Activity _context)

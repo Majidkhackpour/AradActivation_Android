@@ -1,18 +1,19 @@
-﻿using System.Collections.Generic;
-using Android.App;
+﻿using Android.App;
 using Android.Graphics;
 using Android.Support.V7.Widget;
 using Android.Views;
 using Android.Widget;
 using Bumptech.Glide;
-using KargozariHamrah.Utils;
 using Services.AndroidViewModels;
+using System;
+using System.Collections.Generic;
 
 namespace KargozariHamrah.Adapters
 {
     public class ShowBuildingListRahnAdapter : RecyclerView.Adapter
     {
         public List<BuildingListViewModel> mHolder;
+        private BuildingListViewModel _current;
         private Activity _context;
         public ShowBuildingListRahnAdapter(List<BuildingListViewModel> _holder, Activity co)
         {
@@ -21,7 +22,9 @@ namespace KargozariHamrah.Adapters
         }
         public override void OnBindViewHolder(RecyclerView.ViewHolder holder, int position)
         {
-            var vh = holder as BuildingListRahnHolder;
+            if (!(holder is BuildingListRahnHolder vh)) return;
+            _current = position == 0 ? mHolder[position] : mHolder[position - 1];
+            vh.MoreImage.Click += MoreImageOnClick;
             vh.RahnPrice.Text = mHolder[position].RahnPrice;
             vh.EjarePrice.Text = mHolder[position].EjarePrice;
             vh.Address.Text = mHolder[position].Address;
@@ -34,17 +37,29 @@ namespace KargozariHamrah.Adapters
             if (string.IsNullOrEmpty(mHolder[position].ImageName))
                 vh.Image.SetImageResource(Resource.Drawable.Arad_NotAwailable);
             else
-                Glide.With(vh.Context).Load(mHolder[position].ImageName).CenterCrop().Into(vh.Image);
+                Glide.With(_context).Load(mHolder[position].ImageName).CenterCrop().Into(vh.Image);
         }
+        private void MoreImageOnClick(object sender, EventArgs e)
+        {
+            if (_current == null) return;
+            //Toast.MakeText(_context, _current.Address, ToastLength.Long).Show();
+            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(_context);
+            alertDialogBuilder.SetMessage("Are you sure,You wanted to make decision");
 
+            AlertDialog alertDialog = alertDialogBuilder.Create();
+            alertDialog.Show();
+        }
         public override RecyclerView.ViewHolder OnCreateViewHolder(ViewGroup parent, int viewType)
         {
-            var itemView = LayoutInflater.From(parent.Context).
-                Inflate(Resource.Layout.BuildingRahnItemLayout, parent, false);
+            var itemView = LayoutInflater.From(parent.Context).Inflate(Resource.Layout.BuildingRahnItemLayout, parent, false);
             var vh = new BuildingListRahnHolder(itemView, _context);
+            itemView.Click += ItemViewOnClick;
             return vh;
         }
-
+        private void ItemViewOnClick(object sender, EventArgs e)
+        {
+            Toast.MakeText(_context, _current.Address, ToastLength.Long).Show();
+        }
         public override int ItemCount => mHolder?.Count ?? 0;
     }
     public class BuildingListRahnHolder : RecyclerView.ViewHolder
@@ -61,7 +76,7 @@ namespace KargozariHamrah.Adapters
         public TextView RoomCount { get; private set; }
         public TextView Metrazh { get; private set; }
         public ImageView Image { get; private set; }
-        public Activity Context { get; set; }
+        public ImageView MoreImage { get; private set; }
 
         public BuildingListRahnHolder(View itemView, Activity _context) : base(itemView)
         {
@@ -77,7 +92,7 @@ namespace KargozariHamrah.Adapters
             RoomCount = itemView.FindViewById<TextView>(Resource.Id.lblBuildingRahn_RoomCount);
             Metrazh = itemView.FindViewById<TextView>(Resource.Id.lblBuildingRahn_Metrazh);
             Image = itemView.FindViewById<ImageView>(Resource.Id.imgBuildingRahn);
-            Context = _context;
+            MoreImage = itemView.FindViewById<ImageView>(Resource.Id.imgBuildingRahnMore);
             SetFonts(itemView, _context);
         }
         private void SetFonts(View view, Activity _context)

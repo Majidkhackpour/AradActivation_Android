@@ -49,29 +49,36 @@
                 android:id="@+id/lblBuildingRahn_Address"/>
         </LinearLayout>
         <LinearLayout
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:orientation="horizontal"
+	        android:layout_gravity="right"
+	        android:layout_marginTop="10dp">
+	        <ImageView
+		        android:layout_width="20dp"
+		        android:layout_height="20dp"
+		        android:src="@drawable/timer"
+		        android:scaleType="fitXY"/>
+	        <TextView
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="3 ساعت پیش"
+		        android:layout_marginRight="10dp"
+		        android:textAppearance="?android:attr/textAppearanceSmall"
+		        android:textColor="@android:color/darker_gray"
+		        android:id="@+id/lblBuildingRahn_Date"/>
+        </LinearLayout>
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_gravity="right"
             android:layout_marginTop="10dp">
-            <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:src="@drawable/timer"
-                android:scaleType="fitXY"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="3 ساعت پیش"
-                android:layout_marginRight="10dp"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:textColor="@android:color/darker_gray"
-                android:id="@+id/lblBuildingRahn_Date"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="قیمت رهن:"
-                android:layout_marginRight="90dp"
+                android:layout_marginRight="10dp"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:textColor="@color/Black"
                 android:id="@+id/lblBuildingRahn_RahnTitle"/>
@@ -83,6 +90,29 @@
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:textColor="@color/Black"
                 android:id="@+id/lblBuildingRahn_RahnPrice"/>
+        </LinearLayout>
+        <LinearLayout
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:orientation="horizontal"
+	        android:layout_gravity="right"
+	        android:layout_marginTop="10dp">
+	        <TextView
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="قیمت اجاره:"
+		        android:layout_marginRight="10dp"
+		        android:textAppearance="?android:attr/textAppearanceSmall"
+		        android:textColor="@color/Black"
+		        android:id="@+id/lblBuildingRahn_EjareTitle"/>
+	        <TextView
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="20,000,000 تومان"
+		        android:layout_marginRight="10dp"
+		        android:textAppearance="?android:attr/textAppearanceSmall"
+		        android:textColor="@color/Black"
+		        android:id="@+id/lblBuildingRahn_EjarePrice"/>
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -98,22 +128,6 @@
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:textColor="@android:color/darker_gray"
                 android:id="@+id/lblBuildingRahn_Type"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="قیمت اجاره:"
-                android:layout_marginRight="30dp"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:textColor="@color/Black"
-                android:id="@+id/lblBuildingRahn_EjareTitle"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="20,000,000 تومان"
-                android:layout_marginRight="10dp"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:textColor="@color/Black"
-                android:id="@+id/lblBuildingRahn_EjarePrice"/>
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -162,15 +176,15 @@
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"/>
         <LinearLayout
-	        android:layout_width="match_parent"
-	        android:layout_height="wrap_content"
-	        android:orientation="horizontal"
-	        android:layout_gravity="right"
-	        android:layout_marginTop="10dp">
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="right"
+            android:layout_marginTop="5dp">
             <ImageView
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="5dp"
                 android:src="@drawable/more"
                 android:scaleType="fitXY"
                 android:id="@+id/imgBuildingRahnMore"
